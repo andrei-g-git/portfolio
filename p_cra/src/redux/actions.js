@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-exports.closingShowcaseModal = exports.selectedShowcaseItem = exports.toggledShowcaseModal = exports.toggledTheme = exports.scrollDirectionChanged = exports.scrolled = exports.navItemSelected = exports.navItemHighlighted = exports.switchedAutoscroll = exports.justClickedNavItem = exports.activeNavItemChanged = exports.characterAnimationChanged = exports.whatever = void 0;
+exports.closingShowcaseModal = exports.selectedColabItem = exports.selectedShowcaseItem = exports.toggledShowcaseModal = exports.toggledTheme = exports.scrollDirectionChanged = exports.scrolled = exports.navItemSelected = exports.navItemHighlighted = exports.switchedAutoscroll = exports.justClickedNavItem = exports.activeNavItemChanged = exports.characterAnimationChanged = exports.whatever = void 0;
 var actionTypes_1 = require("./actionTypes");
 exports.whatever = function (value) {
     return {
@@ -71,6 +71,12 @@ exports.toggledShowcaseModal = function (showcasing) {
 exports.selectedShowcaseItem = function (selectedItem) {
     return {
         type: actionTypes_1.SELECTED_SHOWCASE_ITEM,
+        payload: selectedItem
+    };
+};
+exports.selectedColabItem = function (selectedItem) {
+    return {
+        type: actionTypes_1.SELECTED_COLAB_ITEM,
         payload: selectedItem
     };
 };

@@ -23,6 +23,7 @@
         @media(max-width: map-get($breakpoints, "tablet")){
             display: flex;
             flex-direction: column;
+            gap: 10px;
         }
     }
 }

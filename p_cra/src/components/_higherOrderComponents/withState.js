@@ -11,9 +11,10 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 exports.__esModule = true;
-exports.withThemeState = exports.withPageState = void 0;
+exports.withModalState = exports.withThemeState = exports.withPageState = void 0;
 var React = require("react");
 var react_redux_1 = require("react-redux");
+var actions_1 = require("../../redux/actions");
 exports.withPageState = function (WrappedComponent) {
     return react_redux_1.connect(mapPageState, {})(function (props) {
         return (React.createElement(WrappedComponent, __assign({}, props)));
@@ -34,5 +35,34 @@ WrappedComponent) {
 var mapThemeState = function (state) {
     return {
         darkTheme: state.ui.darkTheme
+    };
+};
+//doesn't work, it doesn't see it as a valid component
+// export const withModalState = (WrappedComponent: | typeof React.Component | React.ComponentClass<any> | React.FunctionComponent<any>) => {
+//     return connectWrappedComponent(WrappedComponent);
+// }
+exports.withModalState = function (// DRY!!!!!!!
+WrappedComponent) {
+    return react_redux_1.connect(mapModalState, mapModalDispatch)(function (props) {
+        return (React.createElement(WrappedComponent, __assign({}, props)));
+    });
+};
+var mapModalState = function (state) {
+    return {
+        selectedItems: state.ui.selectedItems
+    };
+};
+var mapModalDispatch = function (dispatch) {
+    return {
+        toggleModal: function (isVisible) {
+            dispatch(actions_1.toggledShowcaseModal(isVisible));
+        }
+    };
+};
+var connectWrappedComponent = function (WrappedComponent) {
+    return function () {
+        return react_redux_1.connect(mapModalState, mapModalDispatch)(function (props) {
+            return (React.createElement(WrappedComponent, __assign({}, props)));
+        });
     };
 };

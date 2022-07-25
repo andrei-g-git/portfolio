@@ -12,7 +12,8 @@ import {
     TOGGLED_THEME,
     TOGGLED_SHOWCASE_MODAL,
     SELECTED_SHOWCASE_ITEM,
-    CLOSING_SHOWCASE_MODAL
+    CLOSING_SHOWCASE_MODAL,
+    SELECTED_COLAB_ITEM
 } from "./actionTypes";
 import {
     NumberPayload,
@@ -99,6 +100,13 @@ export const toggledShowcaseModal = (showcasing: boolean): BooleanPayload => {
 export const selectedShowcaseItem = (selectedItem: number): NumberPayload => {
     return{
         type: SELECTED_SHOWCASE_ITEM,
+        payload: selectedItem
+    };
+};
+
+export const selectedColabItem = (selectedItem: number): NumberPayload => {
+    return{
+        type: SELECTED_COLAB_ITEM,
         payload: selectedItem
     };
 };

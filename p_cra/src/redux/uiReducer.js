@@ -28,7 +28,8 @@ var initialState = {
     scrollDirection: uiEnums_1.Scrolling.NONE,
     darkTheme: false,
     showcasing: false,
-    selectedProject: 0
+    selectedProject: 0,
+    selectedColab: 0
 };
 exports.uiReducer = function (state, action) {
     if (state === void 0) { state = initialState; }
@@ -57,6 +58,8 @@ exports.uiReducer = function (state, action) {
             return __assign(__assign({}, state), { showcasing: action.payload });
         case actionTypes_1.SELECTED_SHOWCASE_ITEM:
             return __assign(__assign({}, state), { selectedProject: action.payload });
+        case actionTypes_1.SELECTED_COLAB_ITEM:
+            return __assign(__assign({}, state), { selectedColab: action.payload });
         default:
             return state;
     }

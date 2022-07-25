@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-exports.getShowcaseItems = exports.Showcase = void 0;
+exports.getColabs = exports.getShowcaseItems = exports.Showcase = void 0;
 var Showcase = /** @class */ (function () {
     function Showcase() {
     }
@@ -120,5 +120,87 @@ exports.getShowcaseItems = function () {
                 "awefawef", " ", "awefawef"
             ]
         }
+    ];
+};
+exports.getColabs = function () {
+    return [
+        {
+            index: 0,
+            name: "Tab Butler",
+            description: "A streamlined chrome extension for browser tab management",
+            describeContribution: "thinking about it",
+            url: "tabbutler.netlify.app/",
+            git: "https://github.com/MitchellMarkGeorge/TabButler",
+            topCommits: [
+                "https://github.com/andrei-g-git/TabButler/commit/4cc4c08399ad39fe98d5755e5a53eed5387cc183",
+                "https://github.com/andrei-g-git/TabButler/commit/ac3ce4a755f9d780555102a13c24514b362640c2"
+            ],
+            image: "colab-1.png" //"https://github.com/andrei-g-git/TabButler/blob/main/src/assets/Tab%20Butler%20Large%20Promo%20Image.png",             
+        },
+        {
+            index: 0,
+            name: "blah 1",
+            description: "111 111 111",
+            describeContribution: "thinking about it",
+            url: "tabbutler.netlify.app/",
+            git: "https://github.com/MitchellMarkGeorge/TabButler",
+            topCommits: [
+                "https://github.com/andrei-g-git/TabButler/commit/4cc4c08399ad39fe98d5755e5a53eed5387cc183",
+                "https://github.com/andrei-g-git/TabButler/commit/ac3ce4a755f9d780555102a13c24514b362640c2"
+            ],
+            image: "colab-2.jpg" //"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.nElVX_vQjPtczJ-URiEMwQHaFj%26pid%3DApi&f=1",             
+        },
+        {
+            index: 0,
+            name: "blah 1",
+            description: "111 111 111",
+            describeContribution: "thinking about it",
+            url: "tabbutler.netlify.app/",
+            git: "https://github.com/MitchellMarkGeorge/TabButler",
+            topCommits: [
+                "https://github.com/andrei-g-git/TabButler/commit/4cc4c08399ad39fe98d5755e5a53eed5387cc183",
+                "https://github.com/andrei-g-git/TabButler/commit/ac3ce4a755f9d780555102a13c24514b362640c2"
+            ],
+            image: "colab-3.jpg" //"https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.wallpaper-mobile.com%2Ffree_download%2F640_480_wallpapers%2F11201321%2FB%2FB_natural_n6FE7fYE.jpg&f=1&nofb=1",             
+        },
+        {
+            index: 0,
+            name: "blah 1",
+            description: "111 111 111",
+            describeContribution: "thinking about it",
+            url: "tabbutler.netlify.app/",
+            git: "https://github.com/MitchellMarkGeorge/TabButler",
+            topCommits: [
+                "https://github.com/andrei-g-git/TabButler/commit/4cc4c08399ad39fe98d5755e5a53eed5387cc183",
+                "https://github.com/andrei-g-git/TabButler/commit/ac3ce4a755f9d780555102a13c24514b362640c2"
+            ],
+            image: "colab-4.jpg" //"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.N8bP6bt1bVk7BjgtPKlLogHaFj%26pid%3DApi&f=1",             
+        },
+        {
+            index: 0,
+            name: "blah 1",
+            description: "111 111 111",
+            describeContribution: "thinking about it",
+            url: "tabbutler.netlify.app/",
+            git: "https://github.com/MitchellMarkGeorge/TabButler",
+            topCommits: [
+                "https://github.com/andrei-g-git/TabButler/commit/4cc4c08399ad39fe98d5755e5a53eed5387cc183",
+                "https://github.com/andrei-g-git/TabButler/commit/ac3ce4a755f9d780555102a13c24514b362640c2"
+            ],
+            image: "colab-5.jpg" //"https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.wallpaper-mobile.com%2Ffree_download%2F640_480_wallpapers%2F11201321%2FB%2FB_pinkfantas_6NMefqUI.jpg&f=1&nofb=1",             
+        },
+        {
+            index: 0,
+            name: "blah 1",
+            description: "111 111 111",
+            describeContribution: "thinking about it",
+            url: "tabbutler.netlify.app/",
+            git: "https://github.com/MitchellMarkGeorge/TabButler",
+            topCommits: [
+                "https://github.com/andrei-g-git/TabButler/commit/4cc4c08399ad39fe98d5755e5a53eed5387cc183",
+                "https://github.com/andrei-g-git/TabButler/commit/ac3ce4a755f9d780555102a13c24514b362640c2"
+            ],
+            image: "colab-6.jpg" //"https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.wallpaper-mobile.com%2Ffree_download%2F640_480_wallpapers%2F11201322%2FB%2FB_dubai_hOTdXVX1.jpg&f=1&nofb=1",             
+        },
     ];
 };

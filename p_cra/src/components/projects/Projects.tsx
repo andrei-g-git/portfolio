@@ -1,16 +1,22 @@
 import * as React from 'react';
+//import { createContext } from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import ShowcaseItem from '../showcaseItem/ShowcaseItem';
 import ShowcaseOverlay from '../showcaseOverlay/ShowcaseOverlay';
 import ExpandProject from '../expandProject/ExpandProject';
-import { getShowcaseItems, ShowcaseObject } from './showcaseItems';
-import { withThemeState } from '../_higherOrderComponents/withState';
-import { toggledShowcaseModal, selectedShowcaseItem } from '../../redux/actions';
+import ColabCarousel from './ColabCarousel';
+import { getColabs, getShowcaseItems, ShowcaseObject } from './showcaseItems';
+import { withThemeState, withModalState } from '../_higherOrderComponents/withState';
+import { toggledShowcaseModal, selectedShowcaseItem, selectedColabItem } from '../../redux/actions';
+import ModalContext from '../_context/contexts';
 import "./Projects.scss";
+
+//const ModalContext = createContext((abc: number) => {}/* : Function => {return (abc: number) => {}} */);
 
 const ShowcaseOverlayWithThemeState = withThemeState(ShowcaseOverlay);
 //const ExpandProjectWithThemeState = withThemeState(ExpandProject);
+const ColabCarouselWithModalState = withModalState(ColabCarousel);
 
 const Projects = (props: any) => {
 
@@ -20,7 +26,7 @@ const Projects = (props: any) => {
 		<div className={props.darkTheme ? "theme-dark" : "theme-light"}>
 
 			<div className={upperClass}
-						style={{ height: /* "100vh" */props.height, maxHeight: /* "100vh" */props.height }}
+						style={{ height: props.height, maxHeight: props.height }}
 					>
 				<div className="projects-title">
 					PROJECTS
@@ -35,7 +41,7 @@ const Projects = (props: any) => {
 									title={item.name}
 									description={item.description}
 									notifyParent={curryStoreSelectedProject(
-										props.selectProject,
+										props.selectProject, 
 										props.toggleModal
 									)}
 									key={item.index}
@@ -44,23 +50,37 @@ const Projects = (props: any) => {
 						)
 					}
 				</div>
-					<ExpandProject images={getShowcaseItems()[props.selectedProject].images}
-						title={getShowcaseItems()[props.selectedProject].name} //I should probably extract the showcase object once
-						description={getShowcaseItems()[props.selectedProject].longDescription}
-						frameworks={getShowcaseItems()[props.selectedProject].frameworks}
-						logos={getShowcaseItems()[props.selectedProject].frameworkLogos}
-						openSite={curryOpenProjectUrl(
-							getShowcaseItems(), 
-							props.selectedProject, 
-							false
-						)}
-						openGit={curryOpenProjectUrl(
-							getShowcaseItems(), 
-							props.selectedProject, 
-							true
-						)}
-
+				<ExpandProject images={getShowcaseItems()[props.selectedProject].images}
+					title={getShowcaseItems()[props.selectedProject].name} //I should probably extract the showcase object once
+					description={getShowcaseItems()[props.selectedProject].longDescription}
+					frameworks={getShowcaseItems()[props.selectedProject].frameworks}
+					logos={getShowcaseItems()[props.selectedProject].frameworkLogos}
+					openSite={curryOpenProjectUrl(
+						getShowcaseItems(), 
+						props.selectedProject, 
+						false
+					)}
+					openGit={curryOpenProjectUrl(
+						getShowcaseItems(), 
+						props.selectedProject, 
+						true
+					)}
+				/>
+				{/* <ColabCarouselWithModalState showcaseItems={getColabs} */}
+				<ModalContext.Provider value={curryStoreSelectedProject(
+						props.selectColab, 
+						props.toggleModal
+					)}
+				>
+					<ColabCarousel showcaseItems={getColabs()}
+						ShowcaseItem={ShowcaseItem}
+						Overlay={ShowcaseOverlayWithThemeState}
+/* 						notifyParent={curryStoreSelectedProject(
+							props.selectColab, 
+							props.toggleModal
+						)} */
 					/>
+				</ModalContext.Provider>
 			</div>
 
 		</div>
@@ -75,7 +95,7 @@ const Projects = (props: any) => {
 // 	return pics;
 // }
 
-const curryStoreSelectedProject = (selectedShowcaseItemCallback: Function, toggledCallback: Function) => { //should be custom hook
+const curryStoreSelectedProject = (selectedShowcaseItemCallback: Function, toggledCallback: Function)/* : Function */ => { //should be custom hook
 	return (index: number) => {
 		selectedShowcaseItemCallback(index);
 		toggledCallback(true);
@@ -94,7 +114,7 @@ const mapStateToProps = (state: any) => {
 	return{
 		showcasing: state.ui.showcasing,
 		selectedProject: state.ui.selectedProject, 
-		
+		selectedColab: state.ui.selectedColab
 	};
 };
 
@@ -102,6 +122,9 @@ const mapDispatchToProps = (dispatch: Dispatch) => {
 	return{
 		selectProject: (index: number) => {
 			dispatch(selectedShowcaseItem(index));
+		},
+		selectColab: (index: number) => {
+			dispatch(selectedColabItem(index));
 		},
 		toggleModal: (isVisible: boolean) => {
 			dispatch(toggledShowcaseModal(isVisible));

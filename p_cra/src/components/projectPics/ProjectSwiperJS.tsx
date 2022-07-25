@@ -20,23 +20,23 @@ function ProjectSwiperJS(props: any) {
             // }}
         >
             <Swiper 
-                modules={[Navigation, Pagination, EffectCreative]}
-                //spaceBetween={0}
-                //slidesPerView={3}
+                modules={[Navigation/* , Pagination *//* , EffectCreative */]}
+                spaceBetween={400} //omit if effect
+                slidesPerView={3} //omit if effect
                 navigation
-                pagination
-                effect="creative"
-                centeredSlides={true}
-                creativeEffect={{
-                    prev: {
-                        translate: [0.01, 0, 0],
-                        scale: 0.7
-                    },
-                    next: {
-                        translate: ['100%', 0, 0],
-                        scale: 1
-                    },
-                }}
+                //pagination
+                //effect="creative"
+                //centeredSlides={true}
+                // creativeEffect={{
+                //     prev: {
+                //         translate: [0.01, 0, 0],
+                //         scale: 0.7
+                //     },
+                //     next: {
+                //         translate: ['100%', 0, 0],
+                //         scale: 1
+                //     },
+                // }}
                 speed={400}
                 breakpoints={{
                     425: {
@@ -44,21 +44,24 @@ function ProjectSwiperJS(props: any) {
                         slidesPerView: 1
                     },
                     768: {
-            
+                        width: 768,
+                        slidesPerView: 2            
                     },
                     1024: {
                         width: 700,
-                        slidesPerView: 1
+                        slidesPerView: 4
                     }
                 }}
             >
                 {
-                    props.images.map((image: string, index: number) => 
+                    props./* images */items.map((/* image: string, */ item: JSX.Element, index: number) => 
                         <SwiperSlide key={index}>
-                            <img className="expand-project-pic" //needs styling
+                            {item}
+
+                            {/* <img className="expand-project-pic" //needs styling
                                 src={require("../../assets/img/" + image)}
                                 alt="screenshot"
-                            />                                        
+                            />                                         */}
                         </SwiperSlide>
 
                     )                                   
