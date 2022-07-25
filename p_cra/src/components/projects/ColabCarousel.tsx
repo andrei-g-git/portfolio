@@ -6,7 +6,6 @@ import ProjectSwiperJS from '../projectPics/ProjectSwiperJS';
 // import ShowcaseOverlay from '../showcaseOverlay/ShowcaseOverlay';
 //import { withThemeState } from '../_higherOrderComponents/withState';
 import ModalContext from '../_context/contexts';
-import "./ColabCarousel.scss";
 //const ShowcaseOverlayWithThemeState = withThemeState(ShowcaseOverlay);
 
 function ColabCarousel(props: any) {
@@ -14,7 +13,7 @@ function ColabCarousel(props: any) {
 	const notifyParent = useContext(ModalContext);
 
 	return (
-		<div className="colab-container">
+		<div className="carousel-container">
 			{
 				<ProjectSwiperJS items = {mapShowcaseItems(
 						props.showcaseItems,
@@ -26,8 +25,6 @@ function ColabCarousel(props: any) {
 						// props.overlay
 						props //can't call the component from an argument directly, apparantly
 					)}
-					picWidth={300}
-					picHeight={220}
 				/>
 			}
 		</div>
@@ -38,8 +35,6 @@ function ColabCarousel(props: any) {
 const mapShowcaseItems = (showcaseItems: ColabObject[], notifyParent: Function,/* curryNotifyParent: Function, selectProject: number, toggleModal: Function, */ props: any/* ShowcaseItem: JSX.Element, Overlay: JSX.Element */) => {
 	return showcaseItems.map(item => 
 		<props.ShowcaseItem image={item.image}
-			width={300}
-			height={220}
 			key={item.index}
 		>
 			<props.Overlay index={item.index}

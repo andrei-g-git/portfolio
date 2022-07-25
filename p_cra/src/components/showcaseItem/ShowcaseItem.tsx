@@ -6,7 +6,7 @@ function ShowcaseItem(props: any) {
   	console.log(`${props.width}px    ${props.height}px`);
 	return (
 		<div className="showcase-item-container"
-			style={{width: `${props.width}px`, height: `${props.height}px`}}
+			//style={{width: `${props.width}px`, height: `${props.height}px`}}
 		>
 			<div className="showcase-pic"
 				style={{

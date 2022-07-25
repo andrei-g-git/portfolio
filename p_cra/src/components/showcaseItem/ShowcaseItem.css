@@ -2,6 +2,7 @@
   position: relative;
   width: 400px;
   height: 300px;
+  border: solid 2px red;
 }
 .showcase-item-container .showcase-pic {
   position: absolute;
