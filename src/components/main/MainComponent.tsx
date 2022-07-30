@@ -34,6 +34,7 @@ function MainComponent(props: any) {
 
     return (
         <div className="main" id="main">
+            <h1>BLAAAAH</h1>
             <LandingPage height="100vh"/> {/* heights are stored in the Pages class */}
 
             {/* <NavBar />
