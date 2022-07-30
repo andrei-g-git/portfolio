@@ -1,5 +1,3 @@
-import { Interface } from "readline";
-
 export class Showcase{
     static get GAMESTORE(){
         return{
@@ -33,12 +31,6 @@ export class Showcase{
         };
     }
 }
-
-// export const getShowcaseImagePaths = (): Map<string, string> => {
-//     const imagePaths: Map<string, string> = new Map();
-//     imagePaths.set
-//     return ["awefawef"]
-// }
 
 export interface ShowcaseObject{
     index: number, 

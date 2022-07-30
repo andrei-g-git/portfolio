@@ -1,4 +1,3 @@
-
 import "./Skill.scss";
 
 function Skill(props: any) {

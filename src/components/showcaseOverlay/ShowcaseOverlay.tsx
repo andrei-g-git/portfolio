@@ -1,4 +1,3 @@
-import * as React from 'react';
 import "./ShowcaseOverlay.scss";
 
 function ShowcaseOverlay(props: any) { //switch dark/light theme

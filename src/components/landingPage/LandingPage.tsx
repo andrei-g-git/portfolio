@@ -58,7 +58,7 @@ export const LandingPage = (props: any) => { //make this thing pannable horizont
                 y="200px"
             />
             <img className="character" 
-                src={animUri + "?" + Math.random().toString()}//{getCharacterAnimationUri(props.characterAnimation, animations, "../../")}// + "?" + Math.random().toString()} //browsers cache media, non-looping gifs are preserved as their end animation even on page reload          
+                src={animUri + "?" + Math.random().toString()}        
                 alt="char"
             />
 

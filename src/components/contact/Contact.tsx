@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { scrollToHeight } from '../../ts/navigation';
 import { Pages } from '../../ts/pages';
 import "./Contact.scss";
@@ -15,7 +14,6 @@ function Contact(props: any) {
         <form className="contact-form"
             method="post" 
             action="https://forms.un-static.com/forms/1120de76e2c5b4d51a64958b1a5c0ca95d39267c"
-            //onSubmit={(event) => {event.preventDefault(); console.log("aweawef")}}
         >
             <input className="contact-form-input"
                 id="input-name"
@@ -34,8 +32,6 @@ function Contact(props: any) {
             <textarea className="contact-form-text-area" 
                 name="message"
             />
-
-            {/* <input type="file" /> */}
 
             <input className="contact-form-submit"
                 id="contact-form-submit"

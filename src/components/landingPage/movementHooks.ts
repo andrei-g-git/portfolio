@@ -43,7 +43,7 @@ export const useHorizontalPanningPANZOOM = (identifier: string, maxWidth: number
                 );
             });
 
-            panzoomStart(element, /* dragObject */panObject, curryGetPanX(panzoom));
+            panzoomStart(element, panObject, curryGetPanX(panzoom));
 
             panzoomEnd(
                 element, 
@@ -70,8 +70,12 @@ const getAbsPanLimit = (element: HTMLElement | null): number => {
 //I get a "compilation failed" error on the bottom bar of VScode but the program runs just fine
 //in chrome debugging the bug reverts only after F5, so I guess the debugger session is tied with the previous dev server run...
 const populatePanObject = (amountToPan: number, panObject: any, clamp: Function, absLimit: number): any => {
-    const farLeftPan = clamp(amountToPan * 2 + window.innerWidth/2, -absLimit, absLimit);
-    const farRightPan = clamp( - amountToPan * 2 - window.innerWidth/2, -absLimit, absLimit); 
+    const farLeftPan = clamp(amountToPan * 2 + window.innerWidth/2, -absLimit, absLimit); //if the abs value is too small (i.e. the viewport is too wide) these clamps malfunction, sets the pan into place
+    const farRightPan = clamp( - amountToPan * 2 - window.innerWidth/2, -absLimit, absLimit);   //if the viewport is wide enough to cover both sideway snaps it will cause the bug above
+    // const farLeftPan = amountToPan * 2 + window.innerWidth/2;                               //this is probably why there's no bug without clamping, the panning width is never bigger than the port's extremities
+    // const farRightPan =  - amountToPan * 2 - window.innerWidth/2; 
+
+    console.log("FL: ", farLeftPan, "   FR: ", farRightPan, "   ABS: ", absLimit, "  rawL: ", amountToPan * 2 + window.innerWidth/2, "rawR: ", - amountToPan * 2 - window.innerWidth/2)
 
     panObject.start = 0;
     panObject.location = "center";
@@ -120,10 +124,10 @@ const curryGetDragStart = (panObject: /* PanObject */any): Function => {
 const curryDragBehaviorAtLocation = (getDragStart: Function, getPanX: Function, panObject: any/* PanObject */, panzoomPan: Function): Function => {
     return (location: keyof PanObject): boolean => {
         if(panObject.location === location){
-            if((/* getPanX() */ test.getPan().x - panObject.start) > 10) {
+            if((getPanX() - panObject.start) > 10) {
                 panzoomPan(panObject[location].leftward, 0);         console.log("end ", panObject[location].current, "     to ", panObject[location].leftward, "x: ", getPanX(), "s: ", panObject.start)
                 return true;
-            } else if((/* getPanX() */ test.getPan().x - panObject.start) < 10) {
+            } else if((getPanX() - panObject.start) < 10) {
                 panzoomPan(panObject[location].rightward, 0);        console.log("end ", panObject[location].current, "     to ", panObject[location].rightward, "x: ", getPanX(), "s: ", panObject.start)
                 return true;
             }          

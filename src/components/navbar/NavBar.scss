@@ -1,11 +1,9 @@
 .nav-bar{
-    width: 100vw;/* 100%; */
+    width: 100vw;
     background-color: aquamarine;
     // position: -webkit-sticky; //doesn't work, even after removing overflows
     // position: -moz-sticky;
     // position: sticky; //doesn't work anymore for some reason
-    // top: 0;
-    // left: 0;
     display: flex;
     justify-content: space-around;
     z-index: 9;

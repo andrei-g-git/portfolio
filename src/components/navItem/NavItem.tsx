@@ -1,4 +1,3 @@
-import * as React from 'react'
 import "./NavItem.scss";
 
 function NavItem(props: any) {

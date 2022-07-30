@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import SkillGroup from '../skillGroup/SkillGroup';
@@ -26,7 +25,6 @@ const About = (props: any) => {
 					ABOUT
 				</div>
 				
-				{/* new */}
 				<div className="about-all-content">
 					<div className="about-me-container"
 						id="about-me-container"

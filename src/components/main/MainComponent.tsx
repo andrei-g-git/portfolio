@@ -11,7 +11,6 @@ import {
     navItemHighlighted 
 } from '../../redux/actions';
 import { 
-    useScrollByActiveNavItem, 
     scrollToActiveNavItem,
     useHighlightNavItemByScrollHeight,
     getPageVh //should be somewhere else, it's not a hook...

@@ -1,5 +1,3 @@
-import * as React from 'react';
-//import { createContext } from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import ShowcaseItem from '../showcaseItem/ShowcaseItem';
@@ -12,10 +10,7 @@ import { toggledShowcaseModal, selectedShowcaseItem, selectedColabItem } from '.
 import ModalContext from '../_context/contexts';
 import "./Projects.scss";
 
-//const ModalContext = createContext((abc: number) => {}/* : Function => {return (abc: number) => {}} */);
-
 const ShowcaseOverlayWithThemeState = withThemeState(ShowcaseOverlay);
-//const ExpandProjectWithThemeState = withThemeState(ExpandProject);
 const ColabCarouselWithModalState = withModalState(ColabCarousel);
 
 const Projects = (props: any) => {
@@ -75,10 +70,6 @@ const Projects = (props: any) => {
 					<ColabCarousel showcaseItems={getColabs()}
 						ShowcaseItem={ShowcaseItem}
 						Overlay={ShowcaseOverlayWithThemeState}
-/* 						notifyParent={curryStoreSelectedProject(
-							props.selectColab, 
-							props.toggleModal
-						)} */
 					/>
 				</ModalContext.Provider>
 			</div>
@@ -88,14 +79,7 @@ const Projects = (props: any) => {
 	);
 };
 
-
-// const getShowcasePicturesForModal = (index: number): ShowcaseObject => {
-// 	const showcaseItems = getShowcaseItems();
-// 	const pics = showcaseItems[index];
-// 	return pics;
-// }
-
-const curryStoreSelectedProject = (selectedShowcaseItemCallback: Function, toggledCallback: Function)/* : Function */ => { //should be custom hook
+const curryStoreSelectedProject = (selectedShowcaseItemCallback: Function, toggledCallback: Function) => { //should be custom hook
 	return (index: number) => {
 		selectedShowcaseItemCallback(index);
 		toggledCallback(true);

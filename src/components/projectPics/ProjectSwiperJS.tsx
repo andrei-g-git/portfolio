@@ -1,4 +1,3 @@
-import * as React from 'react';
 import SwiperCore, { Navigation, Pagination, EffectCreative } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';

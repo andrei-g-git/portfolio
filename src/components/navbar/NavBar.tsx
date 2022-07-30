@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { 
@@ -8,10 +7,8 @@ import {
 } from '../../redux/actions'; //this would probably be more proper if it was injected as a prop
 import { Pages } from '../../ts/pages';
 import NavItem from '../navItem/NavItem';
-import "./NavBar.scss";
-//import Sticky from "sticky-js";
-//const Sticky = require("sticky-js"); 
 import Sticky from "../../lib/sticky.compile.js"; //imported lib, modified by me, added default export but messed with stuff that might impede functioning on AMD cpus
+import "./NavBar.scss";
 
 export const NavBar = (props: any /* CHANGE */) => { //I forgot what gives this it's sticky effect now...
 

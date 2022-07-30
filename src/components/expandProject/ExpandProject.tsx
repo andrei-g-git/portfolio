@@ -36,7 +36,8 @@ export const ExpandProject = (props: any) => {
                                         key={index}
                                     >
                                         <img className="expand-project-skill-logo"
-                                            src={require("../../assets/img/" + logo)}
+                                            //src={require("../../assets/img/" + logo)}
+                                            src={`src/assets/img/${logo}`}
                                             alt={props.frameworks[index] + "logo"}
                                         />
                                         <div className="expand-project-framework-name">

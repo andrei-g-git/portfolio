@@ -8,7 +8,8 @@ function ProjectSimpleGallery(props: any) {
             {
                 props.images.map((image: string, index: number) => 
                     <img className="gallery-pic"
-                        src={require("../../assets/img/" + image)}
+                        //src={require("../../assets/img/" + image)}
+                        src={`src/assets/img/${image}`}
                         alt="screenshot"
                         key={index}
                     />

@@ -1,5 +1,4 @@
 @import "../../css/Variables.scss";
-//@import "../../css/Themes.scss";
 
 .gallery-container{
     display: grid;
@@ -10,12 +9,7 @@
     }
 
     .gallery-pic{
-        width: 100%; //320px;
-        height: auto;//240px;
-
-        // @media(max-width: map-get($breakpoints, "tablet")){
-        //     width: 50%;
-        //     height: auto;
-        // }
+        width: 100%; 
+        height: auto;
     }
 }
