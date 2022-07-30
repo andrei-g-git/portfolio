@@ -1,0 +1,20 @@
+// TODO:      make git commit graph page or add to the about page.
+
+@import "../../css/Mixins.scss";
+
+.skill-icon-and-name{
+    display: flex;
+
+    .skill-icon{
+        width: 20px;
+        height: 20px;
+    }    
+
+    .skill-name{
+        margin: unset;
+        @include themed(){
+            color: theme-get("text-primary");
+        }
+    }
+}
+

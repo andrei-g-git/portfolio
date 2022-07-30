@@ -3,7 +3,7 @@ import { Dispatch } from 'redux';
 import { useEffect } from 'react';
 import LandingPage from '../landingPage/LandingPage';
 // import NavBar from '../navbar/NavBar';
-// import About from '../about/About';
+import About from '../about/About';
 // import Projects from '../projects/Projects';
 // import Contact from '../contact/Contact';
 import { 
@@ -34,16 +34,15 @@ function MainComponent(props: any) {
 
     return (
         <div className="main" id="main">
-            <h1>BLAAAAH</h1>
             <LandingPage height="100vh"/> {/* heights are stored in the Pages class */}
 
-            {/* <NavBar />
+            {/* <NavBar /> */}
 
             <About height="100vh"/>
 
-            <ProjectsThemed height={getPageVh(Pages.PROJECTS.name, 480)}/>
+            {/* <ProjectsThemed height={getPageVh(Pages.PROJECTS.name, 480)}/> */}
 
-            <Contact height="100vh" /> */}
+            {/* <Contact height="100vh" /> */}
         </div>
     );
 }
