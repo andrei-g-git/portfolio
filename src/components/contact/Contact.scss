@@ -1,0 +1,102 @@
+@import "../../css/Variables.scss";
+@import "../../css/Mixins.scss";
+
+@mixin inputElementCommon($height) {
+    width: 700px;
+    min-width: 700px;
+    max-width: 700px;
+    height: $height; 
+    min-height: $height;
+    max-height: $height;
+    background-color: rgb(39, 38, 35);
+    border: none;
+    outline: none;
+    resize: none;
+    font-size: $contact-page-primary-font-size;
+    color: $contact-page-primary-color;    
+
+    &:focus{ 
+        border: none;
+        border: 1px solid rgb(85, 84, 83);
+    }
+
+    @media(max-width: map-get($breakpoints, "tablet")){
+        width: 90vw;        
+        min-width: 90vw;
+        max-width: 90vw;
+    }
+}
+
+.contact-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    background-color: rgb(66, 65, 62);
+    position: relative;
+
+    .contact-title{
+        @include pageTitle();
+    }
+
+    .contact-form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+
+        .contact-form-input{
+            @include inputElementCommon(2rem);
+        }
+
+        .contact-form-text-area{
+            @include inputElementCommon(400px);
+            @media(max-width: map-get($breakpoints, "tablet")){
+                height: 40vh; 
+                min-height: 40vh;
+                max-height: 40vh;
+            }
+        }
+
+        .contact-form-submit{
+            background-color: transparent;
+            border: none;
+            border: 3px solid aquamarine;
+            color: aquamarine;
+            font-size: larger;
+
+            &:active{
+                border-color: white;
+                color: white;
+            }
+        }
+    }
+
+    .contact-footer{
+        width: 100%;
+        height: 200px;
+        background-color: rgb(28, 29, 32);
+        position: absolute;
+        bottom: 0;
+        @media(max-width: map-get($breakpoints, "tablet")){
+            height: 150px;
+        }
+    }
+
+    .back-to-top{
+        width: 96px;
+        height: 96px;
+        background-image: url(../../assets/img/arrow-aquamarine-512.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        bottom: 140px;
+        z-index: 2;
+
+        @media(max-width: map-get($breakpoints, "tablet")){
+            width: 64px;
+            height: 64px;
+            bottom: 120px;
+        }
+    }
+}

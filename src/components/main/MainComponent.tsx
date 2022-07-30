@@ -5,7 +5,7 @@ import LandingPage from '../landingPage/LandingPage';
 import NavBar from '../navbar/NavBar';
 import About from '../about/About';
 import Projects from '../projects/Projects';
-// import Contact from '../contact/Contact';
+import Contact from '../contact/Contact';
 import { 
     switchedAutoscroll,
     navItemHighlighted 
@@ -42,7 +42,7 @@ function MainComponent(props: any) {
 
             <ProjectsThemed height={getPageVh(Pages.PROJECTS.name, 480)}/>
 
-            {/* <Contact height="100vh" /> */}
+            <Contact height="100vh" />
         </div>
     );
 }

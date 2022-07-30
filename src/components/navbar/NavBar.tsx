@@ -27,6 +27,7 @@ export const NavBar = (props: any /* CHANGE */) => { //I forgot what gives this 
 						name={item.toUpperCase()}
 						active={props.highlightedNavItem === index ? true : false}
 						notifyParent={props.selectedNavItem}
+						key={index}
 					/>
 				)
 			}		
