@@ -62,7 +62,7 @@ const Projects = (props: any) => {
 					)}
 				/>
 				{/* <ColabCarouselWithModalState showcaseItems={getColabs} */}
-				<ModalContext.Provider value={curryStoreSelectedProject(
+				<ModalContext.Provider value={curryStoreSelectedProject( //shouldn't be called ModalContext, it's not for a modal...
 						props.selectColab, 
 						props.toggleModal
 					)}

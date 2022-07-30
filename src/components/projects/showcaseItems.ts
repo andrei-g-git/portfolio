@@ -164,7 +164,7 @@ export const getColabs = (): ColabObject[] => {
             image: "colab-1.png"//"https://github.com/andrei-g-git/TabButler/blob/main/src/assets/Tab%20Butler%20Large%20Promo%20Image.png",             
         },
         {
-            index: 0,
+            index: 1,
             name: "blah 1",
             description: "111 111 111",
             describeContribution: "thinking about it",
@@ -177,7 +177,7 @@ export const getColabs = (): ColabObject[] => {
             image: "colab-2.jpg"//"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.nElVX_vQjPtczJ-URiEMwQHaFj%26pid%3DApi&f=1",             
         },
         {
-            index: 0,
+            index: 2,
             name: "blah 1",
             description: "111 111 111",
             describeContribution: "thinking about it",
@@ -190,7 +190,7 @@ export const getColabs = (): ColabObject[] => {
             image: "colab-3.jpg"//"https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.wallpaper-mobile.com%2Ffree_download%2F640_480_wallpapers%2F11201321%2FB%2FB_natural_n6FE7fYE.jpg&f=1&nofb=1",             
         },
         {
-            index: 0,
+            index: 3,
             name: "blah 1",
             description: "111 111 111",
             describeContribution: "thinking about it",
@@ -203,7 +203,7 @@ export const getColabs = (): ColabObject[] => {
             image: "colab-4.jpg"//"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.N8bP6bt1bVk7BjgtPKlLogHaFj%26pid%3DApi&f=1",             
         },
         {
-            index: 0,
+            index: 4,
             name: "blah 1",
             description: "111 111 111",
             describeContribution: "thinking about it",
@@ -216,7 +216,7 @@ export const getColabs = (): ColabObject[] => {
             image: "colab-5.jpg"//"https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.wallpaper-mobile.com%2Ffree_download%2F640_480_wallpapers%2F11201321%2FB%2FB_pinkfantas_6NMefqUI.jpg&f=1&nofb=1",             
         },
         {
-            index: 0,
+            index: 5,
             name: "blah 1",
             description: "111 111 111",
             describeContribution: "thinking about it",

@@ -1,10 +1,39 @@
 .swiper-container{
-    display: "flex";
-    justify-content: "center";
-    align-items: "center"; //??
+    //display: "flex";
+    //justify-content: "center";
+    //align-items: "center"; //??
     width: "80%";    
-    border: solid 2px green;
+    //border: solid 2px green;
     
     height: 150px;
 
 }
+
+//apparently you're supposed to override swiper's style...
+.swiper{
+    width: 65%;
+    //position: relative;
+}
+
+.swiper-slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-button-next{
+    // position: absolute;
+    // top: 50%;
+    // transform: translateY(-50%);
+    right: -10px;
+}
+.swiper-button-prev{
+    // position: absolute;
+    // top: 50%;
+    // transform: translateY(-50%);
+    left: -10px;
+}
+
+// .swiper-container{
+//     position: relative;
+// }
