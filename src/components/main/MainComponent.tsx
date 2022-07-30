@@ -2,9 +2,9 @@ import { connect } from "react-redux";
 import { Dispatch } from 'redux';
 import { useEffect } from 'react';
 import LandingPage from '../landingPage/LandingPage';
-// import NavBar from '../navbar/NavBar';
+import NavBar from '../navbar/NavBar';
 import About from '../about/About';
-// import Projects from '../projects/Projects';
+import Projects from '../projects/Projects';
 // import Contact from '../contact/Contact';
 import { 
     switchedAutoscroll,
@@ -17,10 +17,10 @@ import {
     getPageVh //should be somewhere else, it's not a hook...
 } from './mainHooks';
 import { Pages } from '../../ts/pages';
-//import {withThemeState} from '../_higherOrderComponents/withState';
+import {withThemeState} from '../_higherOrderComponents/withState';
 import "./MainComponent.scss";
 
-//const ProjectsThemed = withThemeState(Projects);
+const ProjectsThemed = withThemeState(Projects);
 
 function MainComponent(props: any) {
 
@@ -36,11 +36,11 @@ function MainComponent(props: any) {
         <div className="main" id="main">
             <LandingPage height="100vh"/> {/* heights are stored in the Pages class */}
 
-            {/* <NavBar /> */}
+            <NavBar />
 
             <About height="100vh"/>
 
-            {/* <ProjectsThemed height={getPageVh(Pages.PROJECTS.name, 480)}/> */}
+            <ProjectsThemed height={getPageVh(Pages.PROJECTS.name, 480)}/>
 
             {/* <Contact height="100vh" /> */}
         </div>

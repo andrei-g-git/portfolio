@@ -1,0 +1,141 @@
+@import "../../css/Variables.scss";
+@import "../../css/Themes.scss";
+
+.expand-project-container{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9;
+
+}
+
+.expand-project-modal{
+    width: 50%;
+    min-height: 80%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0px 0px 8px black ;
+
+    animation: popup 0.3s forwards ease-in-out; 
+
+    @include themed(){
+        background-color: theme-get("modal-primary");
+    }
+    @media(max-width: map-get($breakpoints, "tablet")){
+        width: 80%;
+        min-height: 80%;   
+        height: auto;   
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .expand-project-content{
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr; 
+        // display: flex;
+        // justify-content: center;
+        // align-items: center; //??
+
+        //width: 80%;
+
+        @media(max-width: map-get($breakpoints, "tablet")){
+            // display: flex;
+            // flex-direction: column;
+            // align-items: center;
+
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .expand-project-pic{
+            width: 100%; //320px;
+            height: auto;//240px;
+
+            // @media(max-width: map-get($breakpoints, "tablet")){
+            //     width: 50%;
+            //     height: auto;
+            // }
+        }
+    }
+
+    .expand-project-skills{
+        display: flex;
+        gap: 10px;
+
+        .expand-project-logo-and-name{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .expand-project-skill-logo{
+                width: 32px;
+                height: 32px;
+            }
+
+            .expand-project-framework-name{
+                font-size: x-small;
+            }
+        }        
+    }
+
+}
+
+
+
+
+.close-popup-03s{
+    animation: closePopup 0.3s forwards ease-in-out; 
+}
+.close-popup-04s{
+    animation: closePopup 0.4s forwards ease-in-out; 
+}
+.close-popup-05s{
+    animation: closePopup 0.5s forwards ease-in-out; 
+}
+.close-popup-06s{
+    animation: closePopup 0.6s forwards ease-in-out; 
+}
+.close-popup-07s{
+    animation: closePopup 0.7s forwards ease-in-out; 
+}
+.close-popup-08s{
+    animation: closePopup 0.8s forwards ease-in-out; 
+}
+.close-popup-09s{
+    animation: closePopup 0.9s forwards ease-in-out; 
+}
+.close-popup-1s{
+    animation: closePopup 1s forwards ease-in-out; 
+}
+
+@keyframes popup {
+    0%{
+        transform: scale(0, 0);
+    }
+    75%{
+        transform: scale(1.15, 1.15);
+    }
+    90%{
+        transform: scale(0.9, 0.9);
+    }
+    100%{
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes closePopup {
+    0%{
+        transform: scale(1, 1);
+    }   
+    67%{
+        transform: scale(1.15, 1.15);
+    }
+    100%{
+        transform: scale(0, 0);
+    }     
+}
