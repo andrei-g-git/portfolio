@@ -20,60 +20,75 @@ export const ExpandProject = (props: any) => {
                 <div className="expand-project-container">
                     <div className={"expand-project-modal" + modalCloseClass}>
 
-                        <ProjectSimpleGallery images={props.images} />
+                        <div className="expand-project-upper">
+                            <ProjectSimpleGallery images={props.images} />
 
-                        <div className="expand-project-info-wrapper">
-                            <div className="expand-project-info">
-                                <h3 className="expand-project-title">
-                                    {props.title}
-                                </h3>
+                            <div className="expand-project-info-wrapper">
+                                <div className="expand-project-info">
+                                    <h3 className="expand-project-title">
+                                        {props.title}
+                                    </h3>
 
-                                <p className="expand-project-description">
-                                    {props.description}
-                                </p>
-                                
-                                <div className="expand-project-skills">
-                                    {
-                                        props.logos.map((logo: string, index: number) => 
-                                            <div className="expand-project-logo-and-name"
-                                                key={index}
-                                            >
-                                                <img className="expand-project-skill-logo"
-                                                    //src={require("../../assets/img/" + logo)}
-                                                    src={`src/assets/img/${logo}`}
-                                                    alt={props.frameworks[index] + "logo"}
-                                                />
-                                                <div className="expand-project-framework-name">
-                                                    {props.frameworks[index]}
+                                    <p className="expand-project-description">
+                                        {props.description}
+                                    </p>
+                                    
+                                    <div className="expand-project-skills">
+                                        {
+                                            props.logos.map((logo: string, index: number) => 
+                                                <div className="expand-project-logo-and-name"
+                                                    key={index}
+                                                >
+                                                    <img className="expand-project-skill-logo"
+                                                        //src={require("../../assets/img/" + logo)}
+                                                        src={`src/assets/img/${logo}`}
+                                                        alt={props.frameworks[index] + "logo"}
+                                                    />
+                                                    <div className="expand-project-framework-name">
+                                                        {props.frameworks[index]}
+                                                    </div>
                                                 </div>
-                                            </div>
 
-                                        )
-                                    }
+                                            )
+                                        }
+                                    </div>                            
                                 </div>                            
+                            </div>
+
+                        </div>
+
+
+
+                        <div className="expand-project-buttons-padding">
+                            <div className="expand-project-buttons">
+                                <div className="expand-project-buttons-left">
+                                    <TextButton handleClick={props.openSite}
+                                        theme="button-color-cta"
+                                    >
+                                        Visit Website
+                                    </TextButton>
+
+                                    <TextButton handleClick={props.openGit}
+                                        theme="button-color-cta"
+                                    >
+                                        Github
+                                    </TextButton>
+
+                                </div>
+                                <TextButton handleClick={close(
+                                        props.closeModal,
+                                        delay,
+                                        setPopupClass,
+                                        popupClass
+                                    )}
+                                    theme="button-color-plain"
+                                > 
+                                    Close 
+                                </TextButton>
                             </div>                            
                         </div>
 
 
-                        <div className="expand-project-buttons">
-                            <div className="expand-project-buttons-left">
-                                <TextButton handleClick={props.openSite}
-                                    theme="button-color-cta"
-                                >
-                                    Visit Website
-                                </TextButton>
-                            </div>
-                            <TextButton handleClick={close(
-                                    props.closeModal,
-                                    delay,
-                                    setPopupClass,
-                                    popupClass
-                                )}
-                                theme="button-color-plain"
-                            > 
-                                Close 
-                            </TextButton>
-                        </div>
 
                     </div>
                 </div>
