@@ -56,6 +56,13 @@ export const ExpandProject = (props: any) => {
 
 
                         <div className="expand-project-buttons">
+                            <div className="expand-project-buttons-left">
+                                <TextButton handleClick={props.openSite}
+                                    theme="button-color-cta"
+                                >
+                                    Visit Website
+                                </TextButton>
+                            </div>
                             <TextButton handleClick={close(
                                     props.closeModal,
                                     delay,
@@ -67,33 +74,6 @@ export const ExpandProject = (props: any) => {
                                 Close 
                             </TextButton>
                         </div>
-
-
-{/*                         <button
-                            style={{fontSize: "xl"}}
-                            onClick={() => {
-                                setPopupClass(popupClass); 
-                                close(
-                                    props.closeModal,
-                                    delay,
-                                    setPopupClass
-                                );
-                            }}
-                        >
-                            X
-                        </button> */}
-
-                        <button
-                            onClick={() => props.openSite()}
-                        >
-                            GO TO SITE
-                        </button>
-
-                        <button
-                            onClick={() => props.openGit()}
-                        >
-                            GIT HUB
-                        </button>
 
                     </div>
                 </div>
