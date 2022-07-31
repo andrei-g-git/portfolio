@@ -6,7 +6,9 @@ import { toggledShowcaseModal } from '../../redux/actions';
 import ProjectSimpleGallery from '../projectPics/ProjectSimpleGallery';
 import { getDelayAndAppendToClassName } from './ExpandProjectController';
 import TextButton from '../buttons/TextButton';
+import ProjectInfo from './ProjectInfo';
 import "./ExpandProject.scss";
+
 
 export const ExpandProject = (props: any) => {
 
@@ -24,7 +26,12 @@ export const ExpandProject = (props: any) => {
                             <ProjectSimpleGallery images={props.images} />
 
                             <div className="expand-project-info-wrapper">
-                                <div className="expand-project-info">
+                                <ProjectInfo title={props.title}
+                                    description={props.description}
+                                    logos={props.logos}
+                                    frameworks={props.frameworks}
+                                />
+                                {/* <div className="expand-project-info">
                                     <h3 className="expand-project-title">
                                         {props.title}
                                     </h3>
@@ -52,7 +59,7 @@ export const ExpandProject = (props: any) => {
                                             )
                                         }
                                     </div>                            
-                                </div>                            
+                                </div>                             */}
                             </div>
 
                         </div>
