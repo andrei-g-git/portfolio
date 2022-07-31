@@ -8,6 +8,9 @@
     //justify-content: center;
     align-items: center;
     width: 100vw;
+
+    //gap: 50px;
+
     @include themed(){
         background-image: linear-gradient(theme-get("bg-primary"), rgb(193, 255, 252));
     }

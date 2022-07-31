@@ -125,6 +125,10 @@ export const getPageHeightResponsive = (name: string, mobileBreakpoint: number):
         homeH = Pages.HOME.mobileHeight;
         aboutH = Pages.ABOUT.mobileHeight;
         projectsH = Pages.PROJECTS.mobileHeight;        
+    } else if(window.innerWidth <= 1024){
+        homeH = Pages.HOME.tabletHeight;
+        aboutH = Pages.ABOUT.tabletHeight;
+        projectsH = Pages.PROJECTS.tabletHeight;    
     }
 
     switch(name){
@@ -151,16 +155,25 @@ export const getPageVh = (name: string, mobileBreakpoint: number): String => {//
         aboutVh = Pages.ABOUT.mobileHeight;
         projectsVh = /* "2000px"; */Pages.PROJECTS.mobileHeight;       
         contactVh = Pages.CONTACT.mobileHeight; 
-    }
 
-    console.log("window type mobile:   ", window.innerWidth <= mobileBreakpoint)
+    } else //   < ---- ELSE !!!
+
+    //needs tablet breakpoint arg
+    if(window.innerWidth <= 1024){
+        homeVh = Pages.HOME.tabletHeight;
+        aboutVh = Pages.ABOUT.tabletHeight;
+        projectsVh = /* "2000px"; */Pages.PROJECTS.tabletHeight;       
+        contactVh = Pages.CONTACT.tabletHeight; 
+    }    
+
+    //console.log("window type mobile:   ", window.innerWidth <= mobileBreakpoint)
 
     switch(name){
         case Pages.HOME.name: 
             return homeVh;
         case Pages.ABOUT.name:
             return aboutVh;
-        case Pages.PROJECTS.name: console.log("projects page vh: ", projectsVh)
+        case Pages.PROJECTS.name: //console.log("projects page vh: ", projectsVh)
             return projectsVh;
         case Pages.CONTACT.name:
             return contactVh;

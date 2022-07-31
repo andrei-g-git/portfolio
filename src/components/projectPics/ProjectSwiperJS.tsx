@@ -2,7 +2,7 @@ import SwiperCore, { Navigation, Pagination, EffectCreative } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
-// import 'swiper/css/pagination';
+import 'swiper/css/pagination';
 // import 'swiper/css/effect-creative';
 import './ProjectSwiperJS.scss';
 
@@ -27,25 +27,48 @@ function ProjectSwiperJS(props: any) {
 
     return (
             <Swiper 
-                modules={[Navigation/* , Pagination *//* , EffectCreative */]}
-                spaceBetween={10} //omit if effect
+                modules={[Navigation, Pagination/* , EffectCreative */]}
+                spaceBetween={15} //omit if effect
                 slidesPerView={3}//{4} //omit if effect
-                navigation
+                pagination={{
+                    type: "fraction",
+                }}
+                navigation={true}
                 initialSlide={1}
                 speed={400}
                 breakpoints={{
-                    425: {
-                        width: 425,
-                        slidesPerView: 1
-                    },
-                    768: {
-                        width: 768,
-                        slidesPerView: 2            
-                    },
-                    1024: { //this only takes in numbers, either I'll have to add A LOT of breakpoints, or it will look ugly on different screens
-                        width: 600,//maxWidh / 2 - 10, // hard coded, no bueno //1300,
-                        slidesPerView: 3
-                    }
+                    // 480: {
+                    //     width: 400,
+                    //     slidesPerView: 1
+                    // },
+                    // 1024: {
+                    //     width: 600,
+                    //     slidesPerView: 2            
+                    // },
+                    // 1280: { //this only takes in numbers, either I'll have to add A LOT of breakpoints, or it will look ugly on different screens
+                    //     width: /* maxWidh / 2 - 10, */  1200,// hard coded, no bueno
+                    //     slidesPerView: 3
+                    // },
+                    // 1925: {
+                    //     width: 1600,
+                    //     slidesPerView: 4
+                    // }
+                    "@0.00": {
+                        slidesPerView: 1,
+                        spaceBetween: 5,
+                      },
+                      "@0.75": {
+                        slidesPerView: 2,
+                        spaceBetween: 10,
+                      },
+                      "@1.00": {
+                        slidesPerView: 3,
+                        spaceBetween: 15,
+                      },
+                      "@1.50": {
+                        slidesPerView: 4,
+                        spaceBetween: 15,
+                      },
                 }}
             >
                 {   

@@ -5,6 +5,7 @@ export class Pages {
             name: "home",
             height: "100vh",
             mobileHeight: "100vh",
+            tabletHeight: "100vh"
         };
     }
     static get ABOUT(){
@@ -13,6 +14,7 @@ export class Pages {
             name: "about",
             height: "100vh",
             mobileHeight: "100vh",
+            tabletHeight: "100vh"
         };
     }
     static get PROJECTS(){
@@ -21,6 +23,7 @@ export class Pages {
             name: "projects",
             height: "100vh",
             mobileHeight: "199vh",
+            tabletHeight: "199vh"
         };
     }
     static get CONTACT(){
@@ -29,6 +32,7 @@ export class Pages {
             name: "contact",
             height: "100vh",
             mobileHeight: "100vh",
+            tabletHeight: "100vh"
         };
     }
 
