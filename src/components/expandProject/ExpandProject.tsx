@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { useState } from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
@@ -7,6 +6,7 @@ import ProjectSimpleGallery from '../projectPics/ProjectSimpleGallery';
 import { getDelayAndAppendToClassName } from './ExpandProjectController';
 import TextButton from '../buttons/TextButton';
 import ProjectInfo from './ProjectInfo';
+import ProjectCarousel from './ProjectCarousel';
 import "./ExpandProject.scss";
 
 
@@ -23,7 +23,8 @@ export const ExpandProject = (props: any) => {
                     <div className={"expand-project-modal" + modalCloseClass}>
 
                         <div className="expand-project-upper">
-                            <ProjectSimpleGallery images={props.images} />
+                            {/* <ProjectSimpleGallery images={props.images} /> */}
+                            <ProjectCarousel images={props.images} />
 
                             <div className="expand-project-info-wrapper">
                                 <ProjectInfo title={props.title}
@@ -31,40 +32,9 @@ export const ExpandProject = (props: any) => {
                                     logos={props.logos}
                                     frameworks={props.frameworks}
                                 />
-                                {/* <div className="expand-project-info">
-                                    <h3 className="expand-project-title">
-                                        {props.title}
-                                    </h3>
-
-                                    <p className="expand-project-description">
-                                        {props.description}
-                                    </p>
-                                    
-                                    <div className="expand-project-skills">
-                                        {
-                                            props.logos.map((logo: string, index: number) => 
-                                                <div className="expand-project-logo-and-name"
-                                                    key={index}
-                                                >
-                                                    <img className="expand-project-skill-logo"
-                                                        //src={require("../../assets/img/" + logo)}
-                                                        src={`src/assets/img/${logo}`}
-                                                        alt={props.frameworks[index] + "logo"}
-                                                    />
-                                                    <div className="expand-project-framework-name">
-                                                        {props.frameworks[index]}
-                                                    </div>
-                                                </div>
-
-                                            )
-                                        }
-                                    </div>                            
-                                </div>                             */}
                             </div>
 
                         </div>
-
-
 
                         <div className="expand-project-buttons-padding">
                             <div className="expand-project-buttons">
@@ -94,9 +64,6 @@ export const ExpandProject = (props: any) => {
                                 </TextButton>
                             </div>                            
                         </div>
-
-
-
                     </div>
                 </div>
             </div>
@@ -106,12 +73,6 @@ export const ExpandProject = (props: any) => {
 };
 
 const close = (closeModal: Function, delay: number, setPopupClass: Function, popupClass: String): Function => {
-    // setTimeout(() => {
-    //     closeModal(false);
-    //     setPopupClass("");
-    // },
-    //     delay
-    // );
     return () => {
         setPopupClass(popupClass);
         setTimeout(() => {

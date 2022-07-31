@@ -6,6 +6,8 @@ import 'swiper/css/navigation';
 // import 'swiper/css/effect-creative';
 import './ProjectSwiperJS.scss';
 
+import {useState, useEffect} from "react";
+
 SwiperCore.use([Navigation, Pagination, EffectCreative]);
 
 {/* <div className="swiper-container"//coresponds to expand-project-content in the parent component      
@@ -14,8 +16,16 @@ SwiperCore.use([Navigation, Pagination, EffectCreative]);
 </div> */}
 
 function ProjectSwiperJS(props: any) {
-    return (
+    const [maxWidh, setMaxWidth] = useState(800);
+    useEffect(() => {
+        window.addEventListener("resize", () => {
+            setMaxWidth(window.innerWidth);
+        })
+    },
+        []
+    )
 
+    return (
             <Swiper 
                 modules={[Navigation/* , Pagination *//* , EffectCreative */]}
                 spaceBetween={10} //omit if effect
@@ -33,13 +43,13 @@ function ProjectSwiperJS(props: any) {
                         slidesPerView: 2            
                     },
                     1024: { //this only takes in numbers, either I'll have to add A LOT of breakpoints, or it will look ugly on different screens
-                        width: 1300,
+                        width: 600,//maxWidh / 2 - 10, // hard coded, no bueno //1300,
                         slidesPerView: 3
                     }
                 }}
             >
                 {   
-                    props./* images */items.map((/* image: string, */ item: JSX.Element, index: number) => 
+                    props./* images */items.map((item: any/* image: string, */ /* item: JSX.Element | React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> */, index: number) => 
                         <SwiperSlide key={index}>
                             {item}
 
@@ -51,6 +61,10 @@ function ProjectSwiperJS(props: any) {
                         </SwiperSlide>
 
                     )                                   
+                }
+
+                {
+                    console.log("MAX_WIDTH: ", maxWidh)
                 }
             </Swiper>
     );
