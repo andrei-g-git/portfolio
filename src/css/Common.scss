@@ -1,0 +1,13 @@
+@import "./Themes.scss";
+
+.button-color-cta{
+    @include themed(){
+        color: theme-get("button-cta");
+    }
+}
+
+.button-color-plain{
+    @include themed(){
+        color: theme-get("button-plain");
+    }
+}

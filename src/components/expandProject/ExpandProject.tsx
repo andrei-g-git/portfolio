@@ -5,6 +5,7 @@ import { Dispatch } from 'redux';
 import { toggledShowcaseModal } from '../../redux/actions';
 import ProjectSimpleGallery from '../projectPics/ProjectSimpleGallery';
 import { getDelayAndAppendToClassName } from './ExpandProjectController';
+import TextButton from '../buttons/TextButton';
 import "./ExpandProject.scss";
 
 export const ExpandProject = (props: any) => {
@@ -21,49 +22,66 @@ export const ExpandProject = (props: any) => {
 
                         <ProjectSimpleGallery images={props.images} />
 
-                        <h3 className="expand-project-title">
-                            {props.title}
-                        </h3>
+                        <div className="expand-project-info-wrapper">
+                            <div className="expand-project-info">
+                                <h3 className="expand-project-title">
+                                    {props.title}
+                                </h3>
 
-                        <p className="expand-project-description">
-                            {props.description}
-                        </p>
-                        
-                        <div className="expand-project-skills">
-                            {
-                                props.logos.map((logo: string, index: number) => 
-                                    <div className="expand-project-logo-and-name"
-                                        key={index}
-                                    >
-                                        <img className="expand-project-skill-logo"
-                                            //src={require("../../assets/img/" + logo)}
-                                            src={`src/assets/img/${logo}`}
-                                            alt={props.frameworks[index] + "logo"}
-                                        />
-                                        <div className="expand-project-framework-name">
-                                            {props.frameworks[index]}
-                                        </div>
-                                    </div>
+                                <p className="expand-project-description">
+                                    {props.description}
+                                </p>
+                                
+                                <div className="expand-project-skills">
+                                    {
+                                        props.logos.map((logo: string, index: number) => 
+                                            <div className="expand-project-logo-and-name"
+                                                key={index}
+                                            >
+                                                <img className="expand-project-skill-logo"
+                                                    //src={require("../../assets/img/" + logo)}
+                                                    src={`src/assets/img/${logo}`}
+                                                    alt={props.frameworks[index] + "logo"}
+                                                />
+                                                <div className="expand-project-framework-name">
+                                                    {props.frameworks[index]}
+                                                </div>
+                                            </div>
 
-                                )
-                            }
+                                        )
+                                    }
+                                </div>                            
+                            </div>                            
                         </div>
 
 
-                        <button
+                        <div className="expand-project-buttons">
+                            <TextButton handleClick={close(
+                                    props.closeModal,
+                                    delay,
+                                    setPopupClass,
+                                    popupClass
+                                )}
+                                theme="button-color-plain"
+                            > 
+                                Close 
+                            </TextButton>
+                        </div>
+
+
+{/*                         <button
                             style={{fontSize: "xl"}}
                             onClick={() => {
                                 setPopupClass(popupClass); 
-                                setTimeout(() => {
-                                    props.closeModal(false,/*  delay */0);
-                                    setPopupClass("");
-                                },
-                                    delay 
+                                close(
+                                    props.closeModal,
+                                    delay,
+                                    setPopupClass
                                 );
                             }}
                         >
                             X
-                        </button>
+                        </button> */}
 
                         <button
                             onClick={() => props.openSite()}
@@ -83,6 +101,24 @@ export const ExpandProject = (props: any) => {
         :
             null               
     );
+};
+
+const close = (closeModal: Function, delay: number, setPopupClass: Function, popupClass: String): Function => {
+    // setTimeout(() => {
+    //     closeModal(false);
+    //     setPopupClass("");
+    // },
+    //     delay
+    // );
+    return () => {
+        setPopupClass(popupClass);
+        setTimeout(() => {
+            closeModal(false);
+            setPopupClass("");
+        },
+            delay
+        );        
+    };
 };
 
 const mapStateToProps = (state: any) => {

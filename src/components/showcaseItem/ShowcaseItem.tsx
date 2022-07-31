@@ -1,8 +1,8 @@
 import "./ShowcaseItem.scss"; 
 
 function ShowcaseItem(props: any) {
-  	console.log(`${props.width}px    ${props.height}px`);
-	console.log(`../../assets/img/${props.image}`)
+  	// console.log(`${props.width}px    ${props.height}px`);
+	// console.log(`../../assets/img/${props.image}`)
 	return (
 		<div className="showcase-item-container">
 			<div className="showcase-pic"

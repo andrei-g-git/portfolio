@@ -14,6 +14,9 @@ $themes: (
         footer-bg: rgb(28, 29, 32),  
         
         modal-primary: rgb(94, 141, 125),
+
+        button-cta: rgb(233, 155, 155),
+        button-plain: white
     ),
     light: (
         bg-primary: #ffe4c4,
@@ -30,6 +33,9 @@ $themes: (
         footer-bg: rgb(28, 29, 32),
 
         modal-primary: rgb(0, 189, 189),
+
+        button-cta: rgb(202, 96, 96),
+        button-plain: rgb(124, 124, 124)
     )
 );
 

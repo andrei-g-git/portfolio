@@ -1,0 +1,32 @@
+@import "../../css/Variables.scss";
+
+.button-border{
+
+    // $scale-on-hover: 1.06;
+    // $hover-transition-duration: 0.15s;
+    // $translateX-active: 7px;
+
+    width: fit-content;
+    height: fit-content;
+    padding: 3px 15px;
+    border-width: 2px;
+    border-radius: 6px;
+    border-style: solid;
+    font-size: large;
+
+    transform: translateX(0)
+        scale(1, 1);
+    
+    transition: transform $hover-transition-duration;
+
+    &:hover{
+        transform: 
+            scale($scale-on-hover, $scale-on-hover);
+    }
+
+    &:active{
+        transform: translateX($translateX-active)
+    }
+}
+
+

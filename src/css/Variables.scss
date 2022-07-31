@@ -7,6 +7,10 @@ $pageMaxWidth: $pageMaxWidthNumber * 1px;
 $contact-page-primary-font-size: large;
 $contact-page-primary-color: white;
 
+$scale-on-hover: 1.06;
+$hover-transition-duration: 0.15s;
+$translateX-active: 7px;
+
 //breakpoints
 $breakpoints: (
     "xs": 0,
