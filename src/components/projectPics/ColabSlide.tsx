@@ -1,9 +1,4 @@
-
-
 function ColabSlide(props: any) {
-    console.log("inside slide element @@@@@@@@@@")
-    console.log("### SLIDE width: ", `${props.width}px   `, "image:  ", `src/assets/img/${props.image}`)
-
     return (
         <div //key={index}
             style={{width: `${props.width}px`}}
