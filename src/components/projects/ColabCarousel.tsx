@@ -8,20 +8,23 @@ import ShowcaseItem from '../showcaseItem/ShowcaseItem';
 import ModalContext from '../_context/contexts';
 //const ShowcaseOverlayWithThemeState = withThemeState(ShowcaseOverlay);
 
+//test
+import SlickSwiper from '../projectPics/SlickSwiper';
+
 function ColabCarousel(props: any) {
 
 	const notifyParent = useContext(ModalContext);
 
 	return (
 		<div className="carousel-container">
-			{
-				<ProjectSwiperJS items = {mapShowcaseItems(
+				{/* <SlickSwiper items = {mapShowcaseItems(
 						props.showcaseItems,
 						notifyParent,
 						props 
 					)}
-				/>
-			}
+				/> */}
+                <SlickSwiper items={props.showcaseItems.map((item: ColabObject) => item.image)}/>
+
 		</div>
 	);
 }

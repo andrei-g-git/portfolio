@@ -56,3 +56,7 @@ export const toggleWithTimer = (timer: NodeJS.Timeout | null, duration: number, 
 
     return timer;
 };
+
+export const computeWidthPercentOfViewport = (percentWidth: number): number => {
+    return Math.floor(window.innerWidth * percentWidth)
+};

@@ -13,7 +13,8 @@ import {
 import { 
     scrollToActiveNavItem,
     useHighlightNavItemByScrollHeight,
-    getPageVh //should be somewhere else, it's not a hook...
+    getPageVh, //should be somewhere else, it's not a hook...
+    useResponsiveHeight
 } from './mainHooks';
 import { Pages } from '../../ts/pages';
 import {withThemeState} from '../_higherOrderComponents/withState';
@@ -31,6 +32,8 @@ function MainComponent(props: any) {
         [props.clickedNavItem]
     );
 
+    const projectsHeiht = useResponsiveHeight(getPageVh, Pages.PROJECTS.name, 480); //not sure how this works since it's a const but it seems to work...
+
     return (
         <div className="main" id="main">
             <LandingPage height="100vh"/> {/* heights are stored in the Pages class */}
@@ -39,7 +42,7 @@ function MainComponent(props: any) {
 
             <About height="100vh"/>
 
-            <ProjectsThemed height={getPageVh(Pages.PROJECTS.name, 480)}/>
+            <ProjectsThemed height={projectsHeiht}/>
 
             <Contact height="100vh" />
         </div>

@@ -10,6 +10,10 @@ function ShowcaseItem(props: any) {
 					backgroundImage: `url(src/assets/img/${props.image})`
 				}}
 			/>
+            {/* <img src={`src/assets/img/${props.image}`}
+                alt="PICTURE" 
+                style={{width: "400px", height: "250px"}}
+            /> */}
 			{props.children}
 		</div>
 	)

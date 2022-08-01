@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Pages } from "../../ts/pages";
 import { convertViewportHeightToNumber } from "../../ts/utils";
 
@@ -180,4 +180,17 @@ export const getPageVh = (name: string, mobileBreakpoint: number): String => {//
         default:
             return "100vh";
     }    
+}
+
+export const useResponsiveHeight = (getPageVh: Function, pageName: string, mobileBreakpoint: number) => {
+    const [height, setHeight] = useState("100vh");
+    useEffect(() => {
+        window.addEventListener("resize", () => {
+            setHeight(getPageVh(pageName, mobileBreakpoint))
+        });
+    },
+        []
+    );
+
+    return height;
 }
