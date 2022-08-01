@@ -4,6 +4,7 @@ import ShowcaseItem from '../showcaseItem/ShowcaseItem';
 import ShowcaseOverlay from '../showcaseOverlay/ShowcaseOverlay';
 import ExpandProject from '../expandProject/ExpandProject';
 import ColabCarousel from './ColabCarousel';
+import ContributionsCarousel from './ContributionsCarousel';
 import { getColabs, getShowcaseItems, ShowcaseObject } from './showcaseItems';
 import { withThemeState, withModalState } from '../_higherOrderComponents/withState';
 import { toggledShowcaseModal, selectedShowcaseItem, selectedColabItem } from '../../redux/actions';
@@ -67,10 +68,13 @@ const Projects = (props: any) => {
 						props.toggleModal
 					)}
 				>
-					<ColabCarousel showcaseItems={getColabs()}
+					{/* <ColabCarousel showcaseItems={getColabs()}
 						ShowcaseItem={ShowcaseItem}
 						Overlay={ShowcaseOverlayWithThemeState}
-					/>
+					/> */}
+                    <ContributionsCarousel items={getColabs()}
+                        percentWidth={0.8}
+                    />
 				</ModalContext.Provider>
 			</div>
 
