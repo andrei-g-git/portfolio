@@ -1,3 +1,4 @@
+import React from "react";
 export const colabSettings = {
     dots: true,
     infinite: false,
@@ -32,3 +33,30 @@ export const colabSettings = {
         }
     ]
 };
+
+export const getProjectSettings = (imagePaths: string) => {
+    return {
+        customPaging: (i: number): any => {
+            return (
+                React.createElement(
+                    "a",
+                    null,
+                    React.createElement(
+                        "img",
+                        {
+                            src: imagePaths[i]
+                        },
+                        null
+                    )
+                )
+            )
+        },
+        dots: true,
+        dotsClass: "slick-dots slick-thumb",
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1        
+    }
+
+  };

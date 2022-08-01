@@ -24,7 +24,9 @@ export const ExpandProject = (props: any) => {
 
                         <div className="expand-project-upper">
                             {/* <ProjectSimpleGallery images={props.images} /> */}
-                            <ProjectCarousel images={props.images} />
+                            <ProjectCarousel images={props.images} 
+                                percentWidth={0.95}
+                            />
 
                             <div className="expand-project-info-wrapper">
                                 <ProjectInfo title={props.title}
