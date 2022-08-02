@@ -1,23 +1,66 @@
 import {useState, useEffect} from "react";
 import { computeWidthPercentOfViewport } from "../../ts/utils";
 
-const curryResizeListener = (computeWidthPercentOfViewport: Function): Function => {
+const curryResizeListenerPixels = (computeWidthPercentOfViewport: Function): Function => {
     return (percentWidth: number): number => {
         const [width, setWidth] = useState(computeWidthPercentOfViewport(percentWidth));
 
         useEffect(() => {
             window.addEventListener("resize", event => {
                 setWidth(computeWidthPercentOfViewport(percentWidth));
-            })
+            });
         },
             []
         );  
         
         return width;
     }
+};
+
+export const useContributionsResizeListenerPixels = curryResizeListenerPixels(computeWidthPercentOfViewport);
+
+export const useContributionsResizeListener = (breakpoints: {breakpoint: number, width: string}[]): string => {
+    const [width, setWidth] = useState(breakpoints[0].width);
+
+    useEffect(() => {
+        window.addEventListener("resize", event => {
+            breakpoints.forEach((breakpoint: {breakpoint: number, width: string}) => {
+                if(window.innerWidth < breakpoint.breakpoint){
+                    setWidth(breakpoint.width);
+                }
+            });
+        });            
+    },
+        []
+    );
+    //console.log(width)
+    return width;
 }
 
-export const useContributionsResizeListener = curryResizeListener(computeWidthPercentOfViewport);
+
+// const curryResizeListener = (): Function => { //why am I currying this?
+//     return (breakpoints: {breakpoint: number, width: number}[]): number => {
+//         const [width, setWidth] = useState(breakpoints[0].width);
+
+//         useEffect(() => {
+//             window.addEventListener("resize", event => {
+//                 breakpoints.forEach((breakpoint: {breakpoint: number, width: number}) => {
+//                     if(window.innerWidth < breakpoint.breakpoint){
+//                         setWidth(breakpoint.width);
+//                     }
+//                 });
+
+                
+//             });            
+//         },
+//             []
+//         );
+
+//         return width;
+//     }
+// }; 
+
+// export const useContributionsResizeListener = curryResizeListener();
 
 export const getSlideWidth = (carouselWidth: number, settings: any): number => {
     const slidesAtBreakpoints = settings.responsive.map((object: any) => {

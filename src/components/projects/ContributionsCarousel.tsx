@@ -1,4 +1,4 @@
-import { useContributionsResizeListener, getSlideWidth } from "./ContributionsController";
+import { useContributionsResizeListenerPixels, getSlideWidth } from "./ContributionsController";
 import { colabSettings } from "./slickSettings";
 import SlickSwiper from "../projectPics/SlickSwiper";
 import ColabSlide from "../projectPics/ColabSlide";
@@ -7,12 +7,12 @@ import { ColabObject } from "./showcaseItems";
 function ContributionsCarousel(props: any) {
     const gap = 5;
 
-    let width = useContributionsResizeListener(props.percentWidth);
+    let width = useContributionsResizeListenerPixels(props.percentWidth);
 
     return (
         <SlickSwiper items={mapColabSlides(props.items, width, gap, colabSettings)}
             settings={colabSettings}
-            width={width}
+            width={width + "px"}
         />
     );
 };

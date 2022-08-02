@@ -16,7 +16,7 @@ export const ExpandProject = (props: any) => {
 
     const {popupClass, delay} = getDelayAndAppendToClassName(0.4);
 
-    const widthRatio = 0.35;
+    const widthRatio = 0.50;
 
     return ( 
         props.visible ? 

@@ -1,4 +1,6 @@
 function ProjectSlide(props: any) {
+    console.log("## slide width: ", `${props.width}px`)
+
     return (
         <div
             style={{width: `${props.width}px`}}

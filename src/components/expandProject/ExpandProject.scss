@@ -1,6 +1,15 @@
 @import "../../css/Variables.scss";
 @import "../../css/Themes.scss";
 
+@mixin responsiveWidth($percent){
+    width: $percent !important;
+    min-height: 90%;   
+    height: auto;   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 $modal-padding-x: 15px;
 
 .expand-project-container{
@@ -32,7 +41,20 @@ $modal-padding-x: 15px;
         align-items: center;
 
         .expand-project-info-wrapper{
-            padding: 0 $modal-padding-x 10px $modal-padding-x;
+            padding: 0 $modal-padding-x 100px $modal-padding-x;
+            margin-top: 70px;
+
+            @media(max-width: 1440px){
+                margin-top: 50px;
+            }
+
+            @media(max-width: map-get($breakpoints, "tablet")){
+                margin-top: 40px;
+            }
+
+            @media(max-width: map-get($breakpoints, "tablet")){
+                //margin-top: 25px;
+            }
 
             .expand-project-info{
                 display: flex;
@@ -64,59 +86,18 @@ $modal-padding-x: 15px;
     @include themed(){
         background-color: theme-get("modal-primary");
     }
-    @media(max-width: map-get($breakpoints, "tablet")){
-        width: 70% !important;
-        min-height: 90%;   
-        height: auto;   
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+
+    @media(max-width: 1440px){
+        @include responsiveWidth(60%);
+    }
+    @media(max-width: map-get($breakpoints, "tablet")){ //could be part of the mixin...
+        @include responsiveWidth(80%);
     }
 
     @media(max-width: map-get($breakpoints, "mobile")){
-        width: 90% !important;
-        min-height: 90%;   
-        height: auto;   
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include responsiveWidth(90%);
     }
 
-    // .expand-project-skills{
-    //     display: flex;
-    //     gap: 10px;
-
-    //     .expand-project-logo-and-name{
-    //         display: flex;
-    //         flex-direction: column;
-    //         align-items: center;
-
-    //         .expand-project-skill-logo{
-    //             width: 32px;
-    //             height: 32px;
-    //         }
-
-    //         .expand-project-framework-name{
-    //             font-size: x-small;
-    //         }
-    //     }        
-    // }
-
-    // .expand-project-content{ //not using, insode pic gallery or carousel components
-
-    //     display: grid;
-    //     grid-template-columns: 1fr 1fr 1fr; 
-
-    //     @media(max-width: map-get($breakpoints, "tablet")){
-
-    //         grid-template-columns: 1fr 1fr;
-    //     }
-
-    //     .expand-project-pic{
-    //         width: 100%; 
-    //         height: auto;
-    //     }
-    // }
 }
 
 

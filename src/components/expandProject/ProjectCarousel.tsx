@@ -1,27 +1,9 @@
-//import ProjectSwiperJS from "../projectPics/ProjectSwiperJS";
-// import SlickSwiper from "../projectPics/SlickSwiper";
-
-// function ProjectCarousel(props: any) {
-
-// 	return (
-// 		<div className="project-carousel">
-// 				<ProjectSwiperJS items={props.images.map((image: string, index: number) => 
-// 						<img src={`src/assets/img/${image}`}
-// 							alt="project"
-// 							key={index}
-// 						/>
-// 					)}
-// 				/>
-// 		</div>
-// 	);
-// };
-
-// export default ProjectCarousel;
 
 
 
 
-import { useContributionsResizeListener, getSlideWidth } from "../projects/ContributionsController";
+
+import { useContributionsResizeListener, useContributionsResizeListenerPixels } from "../projects/ContributionsController";
 //import { colabSettings } from "./slickSettings";
 import { getProjectSettings } from "../projects/slickSettings";
 import SlickSwiper from "../projectPics/SlickSwiper";
@@ -32,10 +14,28 @@ import { ShowcaseObject } from "../projects/showcaseItems";
 
 function ProjectCarousel(props: any) {
 
-    console.log(props)
+    //console.log(props)
     const gap = 5;
 
-    let width = useContributionsResizeListener(props.percentWidth);
+    let width = useContributionsResizeListenerPixels(props.percentWidth);
+    let widthPercent = useContributionsResizeListener([ 
+        {
+            breakpoint: 1440,
+            width: "50%"
+        },
+        {
+            breakpoint: 1280,
+            width: "60%"
+        },
+        {
+            breakpoint: 1024,
+            width: "80%"
+        },
+        {
+            breakpoint: 480,
+            width: "90%"
+        },                        
+    ]);
 
     // const projectSettings = getProjectSettings(props.items.map((item: any) => {
     //     return item.image
@@ -45,12 +45,13 @@ function ProjectCarousel(props: any) {
     return (
         <SlickSwiper items={mapProjectSlides(props./* items */images, width, gap, projectSettings)}
             settings={projectSettings}
-            width={width} // < -------------- !!!!!!!!!!!!!!!!!!!
+            width={widthPercent}//{width} // < -------------- !!!!!!!!!!!!!!!!!!!
         />
     );
 };
 
 const mapProjectSlides = (images: string[]/* items: ShowcaseObject[] */, width: number, gap: number, settings: any): JSX.Element[] => {
+    //console.log("width that slide gets:   ", width)
     return /* items */images.map((image: string, index: number) => 
         <ProjectSlide key={index}
             image={image}
