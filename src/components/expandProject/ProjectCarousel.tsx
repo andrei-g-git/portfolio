@@ -45,7 +45,7 @@ function ProjectCarousel(props: any) {
     return (
         <SlickSwiper items={mapProjectSlides(props./* items */images, width, gap, projectSettings)}
             settings={projectSettings}
-            width={width}
+            width={width} // < -------------- !!!!!!!!!!!!!!!!!!!
         />
     );
 };

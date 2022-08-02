@@ -37,6 +37,13 @@ export const colabSettings = {
 export const getProjectSettings = (imagePaths: string) => {
     return {
         customPaging: (i: number): any => {
+
+            // const ul = document.getElementsByClassName("slick-dots")[0];
+            // ul.setAttribute("style", "bottom: - calc(100% / 3)");
+            // const lists = ul.querySelectorAll("li");
+            // lists.forEach((li) =>{
+            //     li.setAttribute("style", "width: 33%"/* "width: calc(25% - 10px);height: 100%;" */)
+            // })
             return (
                 React.createElement(
                     "a",
@@ -44,7 +51,9 @@ export const getProjectSettings = (imagePaths: string) => {
                     React.createElement(
                         "img",
                         {
-                            src: imagePaths[i]
+                            src: "src/assets/img/" + imagePaths[i],
+                            width: "100%"/* "100px" *//* `calc(100% / ${imagePaths.length})` */,
+                            height: "100%"
                         },
                         null
                     )

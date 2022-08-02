@@ -6,7 +6,7 @@ import "./SlickSwiper.scss";
 function SlickSwiper(props: any) {
 
     return (
-        <div style={{width: `${props.width}px`, height: "300px"}}>
+        <div style={{width: `${props.width}px`/* , height: "300px" */}}>
             <div></div> {/* without this it freaks out when I shrink window too much. No idea why */}
             <Slider {...props.settings}>
                 {

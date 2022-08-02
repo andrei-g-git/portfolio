@@ -29,7 +29,7 @@ export const ExpandProject = (props: any) => {
                         <div className="expand-project-upper">
                             {/* <ProjectSimpleGallery images={props.images} /> */}
                             <ProjectCarousel images = {props.images}//images={props.images} 
-                                percentWidth={0.75 * widthRatio}
+                                percentWidth={0.85 * widthRatio}
                             />
 
                             <div className="expand-project-info-wrapper">

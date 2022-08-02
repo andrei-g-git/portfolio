@@ -1,4 +1,13 @@
 .slick-slider{
     display: flex;
     gap: 0;
+    //width: 80%;
 }
+
+.slick-dots{ //for the project carousel, there;s no api to set this stuff programatically
+    bottom: - calc(110% / 4); //doesn't let me subtract small value so I gotta give 110%
+}
+.slick-dots li{
+    width: calc(25% - 5px);
+    height: 100%;
+}    
