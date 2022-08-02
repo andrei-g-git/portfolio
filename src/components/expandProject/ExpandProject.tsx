@@ -16,16 +16,20 @@ export const ExpandProject = (props: any) => {
 
     const {popupClass, delay} = getDelayAndAppendToClassName(0.4);
 
+    const widthRatio = 0.35;
+
     return ( 
         props.visible ? 
             <div className={props.darkTheme? "theme-dark" : "theme-light"}>
                 <div className="expand-project-container">
-                    <div className={"expand-project-modal" + modalCloseClass}>
+                    <div className={"expand-project-modal" + modalCloseClass}
+                        style={{width: (widthRatio * 100) + "%"}}
+                    >
 
                         <div className="expand-project-upper">
                             {/* <ProjectSimpleGallery images={props.images} /> */}
-                            <ProjectCarousel images={props.images} 
-                                percentWidth={0.95}
+                            <ProjectCarousel images = {props.images}//images={props.images} 
+                                percentWidth={0.75 * widthRatio}
                             />
 
                             <div className="expand-project-info-wrapper">

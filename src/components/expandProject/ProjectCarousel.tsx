@@ -31,29 +31,33 @@ import ProjectSlide from "../projectPics/ProjectSlide";
 import { ShowcaseObject } from "../projects/showcaseItems";
 
 function ProjectCarousel(props: any) {
+
+    console.log(props)
     const gap = 5;
 
     let width = useContributionsResizeListener(props.percentWidth);
 
-    const projectSettings = getProjectSettings(props.items.map((item: any) => {
-        return item.image
-    }));
+    // const projectSettings = getProjectSettings(props.items.map((item: any) => {
+    //     return item.image
+    // }));
+    const projectSettings = getProjectSettings(props.images);
 
     return (
-        <SlickSwiper items={mapProjectSlides(props.items, width, gap, projectSettings)}
+        <SlickSwiper items={mapProjectSlides(props./* items */images, width, gap, projectSettings)}
             settings={projectSettings}
             width={width}
         />
     );
 };
 
-const mapProjectSlides = (items: ShowcaseObject[], width: number, gap: number, settings: any): JSX.Element[] => {
-    return items.map(item => 
-        <ProjectSlide key={item.index}
-            image={item.image}
+const mapProjectSlides = (images: string[]/* items: ShowcaseObject[] */, width: number, gap: number, settings: any): JSX.Element[] => {
+    return /* items */images.map((image: string, index: number) => 
+        <ProjectSlide key={index}
+            image={image}
             // title={item.name}
             // description={item.description}
-            width={getSlideWidth(width, settings) - gap}
+            //width={getSlideWidth(width, settings) - gap}
+            width={width}
         />
     )
 };
