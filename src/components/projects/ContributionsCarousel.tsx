@@ -8,7 +8,7 @@ import { ColabObject } from "./showcaseItems";
 import { getColabs } from "./showcaseItems";
 import { withThemeState } from "../_higherOrderComponents/withState";
 import ShowcaseOverlay from "../showcaseOverlay/ShowcaseOverlay";
-import { selectedColabItem, toggledShowcaseModal } from '../../redux/actions';
+import { selectedColabItem, toggledColabModal } from '../../redux/actions';
 
 const ShowcaseOverlayWithThemeState = withThemeState(ShowcaseOverlay);
 
@@ -20,9 +20,9 @@ function ContributionsCarousel(props: any) {
     return (
         //<div className="contributions-container">
             <SlickSwiper items={mapColabSlides(props.items, width, gap, colabSettings, curryStoreSelectedColab(
-                props.selectProject, 
-                props.toggleModal
-            ))}
+                    props.selectColab, 
+                    props.toggleModal
+                ))}
                 settings={colabSettings}
                 width={width + "px"}
             />
@@ -68,7 +68,7 @@ const mapDispatchToProps = (dispatch: Dispatch) => {
 			dispatch(selectedColabItem(index));
 		},
 		toggleModal: (isVisible: boolean) => {
-			dispatch(toggledShowcaseModal(isVisible));
+			dispatch(toggledColabModal(isVisible));
 		}
 	};
 };

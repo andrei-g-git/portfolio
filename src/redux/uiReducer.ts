@@ -12,6 +12,7 @@ import {
     TOGGLED_SHOWCASE_MODAL,
     SELECTED_SHOWCASE_ITEM,
     SELECTED_COLAB_ITEM,
+    TOGGLED_COLAB_MODAL,
     CLOSING_SHOWCASE_MODAL //I'll try working with showcasing first and if it doesn't work I'll use this
 } from "./actionTypes";
 import {ReduxAction} from "./interface/ReduxAction";
@@ -30,9 +31,10 @@ interface UiState{ //should be in the interfaces folder
     scrolling: boolean,
     scrollDirection: number,
     darkTheme: boolean,
-    showcasing: boolean,
+    showcasing: boolean, //this one is dangerous because I mihgt be using it universally when it really only applies to the project modal -- should rename to showProject
     selectedProject: number,
-    selectedColab: number
+    selectedColab: number,
+    showColab: boolean
 }
 
 const initialState: UiState = {
@@ -48,7 +50,8 @@ const initialState: UiState = {
     darkTheme: false,
     showcasing: false,
     selectedProject: 0,
-    selectedColab: 0
+    selectedColab: 0,
+    showColab: false
 };
 
 export const uiReducer = (state: UiState = initialState, action: ReduxAction): UiState => {
@@ -117,7 +120,12 @@ export const uiReducer = (state: UiState = initialState, action: ReduxAction): U
             return{
                 ...state,
                 selectedColab: action.payload
-            };                   
+            };  
+        case TOGGLED_COLAB_MODAL:
+            return{
+                ...state,
+                showColab: action.payload
+            }                 
         default:
             return state;
     }

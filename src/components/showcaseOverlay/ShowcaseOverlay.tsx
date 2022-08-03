@@ -1,7 +1,6 @@
 import "./ShowcaseOverlay.scss";
 
 function ShowcaseOverlay(props: any) { //switch dark/light theme
-    console.log(props.title)
     return (
         <div className={props.darkTheme ? "theme-dark" : "theme-light"}>
             <div className="showcase-overlay-container">

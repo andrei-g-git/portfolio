@@ -13,7 +13,8 @@ import {
     TOGGLED_SHOWCASE_MODAL,
     SELECTED_SHOWCASE_ITEM,
     CLOSING_SHOWCASE_MODAL,
-    SELECTED_COLAB_ITEM
+    SELECTED_COLAB_ITEM,
+    TOGGLED_COLAB_MODAL
 } from "./actionTypes";
 import {
     NumberPayload,
@@ -108,6 +109,13 @@ export const selectedColabItem = (selectedItem: number): NumberPayload => {
     return{
         type: SELECTED_COLAB_ITEM,
         payload: selectedItem
+    };
+};
+
+export const toggledColabModal = (showcasing: boolean): BooleanPayload => {
+    return{
+        type: TOGGLED_COLAB_MODAL,
+        payload: showcasing
     };
 };
 

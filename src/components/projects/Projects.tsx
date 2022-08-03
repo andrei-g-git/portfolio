@@ -9,6 +9,8 @@ import { getColabs, getShowcaseItems, ShowcaseObject } from './showcaseItems';
 import { withThemeState, withModalState } from '../_higherOrderComponents/withState';
 import { toggledShowcaseModal, selectedShowcaseItem, selectedColabItem } from '../../redux/actions';
 import ModalContext from '../_context/contexts';
+import ProjectInfo from '../expandProject/ProjectInfo';
+import ColabInfo from '../expandColab/ColabInfo';
 import "./Projects.scss";
 
 const ShowcaseOverlayWithThemeState = withThemeState(ShowcaseOverlay);
@@ -60,21 +62,25 @@ const Projects = (props: any) => {
 						props.selectedProject, 
 						true
 					)}
+                         
+                    //info={props.showColab ? ProjectInfo : ColabInfo} 
+                    projectInfo={ProjectInfo}
+                    colabInfo={ColabInfo} //this isn't great... should assign dynamically.
 				/>
 
                 <div className="contributons-title">
                     Colaborations on other people's projects
                 </div>
 
-				<ModalContext.Provider value={curryStoreSelectedProject( //shouldn't be called ModalContext, it's not for a modal...
+				{/* <ModalContext.Provider value={curryStoreSelectedProject( //shouldn't be called ModalContext, it's not for a modal...
 						props.selectColab, 
 						props.toggleModal
 					)}
-				>
+				> */}
                     <ContributionsCarousel items={getColabs()}
                         percentWidth={0.8}
                     />
-				</ModalContext.Provider>
+				{/* </ModalContext.Provider> */}
 			</div>
 
 		</div>
@@ -101,7 +107,8 @@ const mapStateToProps = (state: any) => {
 	return{
 		showcasing: state.ui.showcasing,
 		selectedProject: state.ui.selectedProject, 
-		selectedColab: state.ui.selectedColab
+		//selectedColab: state.ui.selectedColab
+        showColab: state.ui.showColab
 	};
 };
 
@@ -110,9 +117,9 @@ const mapDispatchToProps = (dispatch: Dispatch) => {
 		selectProject: (index: number) => {
 			dispatch(selectedShowcaseItem(index));
 		},
-		selectColab: (index: number) => {
-			dispatch(selectedColabItem(index));
-		},
+		// selectColab: (index: number) => {
+		// 	dispatch(selectedColabItem(index));
+		// },
 		toggleModal: (isVisible: boolean) => {
 			dispatch(toggledShowcaseModal(isVisible));
 		}
