@@ -7,8 +7,12 @@ import { getDelayAndAppendToClassName } from './ExpandProjectController';
 import TextButton from '../buttons/TextButton';
 import ProjectInfo from './ProjectInfo';
 import ProjectCarousel from './ProjectCarousel';
+import ProjectCarouselMono from './ProjectCarouselMono';
 import "./ExpandProject.scss";
 
+//test
+import ThumbGallerySwiper from '../projectPics/ThumbGallerySwiper';
+import ProjectSwiper from './ProjectSwiper';
 
 export const ExpandProject = (props: any) => {
 
@@ -28,9 +32,11 @@ export const ExpandProject = (props: any) => {
 
                         <div className="expand-project-upper">
                             {/* <ProjectSimpleGallery images={props.images} /> */}
-                            <ProjectCarousel images = {props.images}//images={props.images} 
+                            {/* <ProjectCarousel images = {props.images}//images={props.images} 
                                 percentWidth={0.85 * widthRatio}
-                            />
+                            /> */}
+                            {/* <ProjectCarouselMono images = {props.images} /> */}
+                            <ProjectSwiper images={props.images}/>
 
                             <div className="expand-project-info-wrapper">
                                 <ProjectInfo title={props.title}

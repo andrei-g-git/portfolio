@@ -1,0 +1,16 @@
+@import "../../css/Variables.scss";
+
+.project-swiper-container{
+    margin-top: 2%;
+    width: 75%;
+
+    @media(max-width: 1440px){
+        width: 85%;
+    }
+    @media(max-width: map-get($breakpoints, "tablet")){
+        width: 100%;
+    }
+    @media(max-width: map-get($breakpoints, "mobile")){
+        width: 100%;
+    }
+}

@@ -75,7 +75,7 @@ const populatePanObject = (amountToPan: number, panObject: any, clamp: Function,
     // const farLeftPan = amountToPan * 2 + window.innerWidth/2;                               //this is probably why there's no bug without clamping, the panning width is never bigger than the port's extremities
     // const farRightPan =  - amountToPan * 2 - window.innerWidth/2; 
 
-    console.log("FL: ", farLeftPan, "   FR: ", farRightPan, "   ABS: ", absLimit, "  rawL: ", amountToPan * 2 + window.innerWidth/2, "rawR: ", - amountToPan * 2 - window.innerWidth/2)
+    //console.log("FL: ", farLeftPan, "   FR: ", farRightPan, "   ABS: ", absLimit, "  rawL: ", amountToPan * 2 + window.innerWidth/2, "rawR: ", - amountToPan * 2 - window.innerWidth/2)
 
     panObject.start = 0;
     panObject.location = "center";
@@ -125,10 +125,10 @@ const curryDragBehaviorAtLocation = (getDragStart: Function, getPanX: Function, 
     return (location: keyof PanObject): boolean => {
         if(panObject.location === location){
             if((getPanX() - panObject.start) > 10) {
-                panzoomPan(panObject[location].leftward, 0);         console.log("end ", panObject[location].current, "     to ", panObject[location].leftward, "x: ", getPanX(), "s: ", panObject.start)
+                panzoomPan(panObject[location].leftward, 0);         //console.log("end ", panObject[location].current, "     to ", panObject[location].leftward, "x: ", getPanX(), "s: ", panObject.start)
                 return true;
             } else if((getPanX() - panObject.start) < 10) {
-                panzoomPan(panObject[location].rightward, 0);        console.log("end ", panObject[location].current, "     to ", panObject[location].rightward, "x: ", getPanX(), "s: ", panObject.start)
+                panzoomPan(panObject[location].rightward, 0);        //console.log("end ", panObject[location].current, "     to ", panObject[location].rightward, "x: ", getPanX(), "s: ", panObject.start)
                 return true;
             }          
         }
@@ -160,7 +160,7 @@ const panzoomStart = (element: HTMLElement | null, panObject: any/* PanObject */
             panObject.location = "farRight";
         }
 
-        console.log("start ", panObject.location, "  val:  ", x);
+        //console.log("start ", panObject.location, "  val:  ", x);
     });
 };
 
@@ -282,7 +282,7 @@ const startPanning = (
     dimensionsObject: DimensionsObject
 ) => {
     return (event: MouseEvent/* DragEvent */) => { //actually a /* DragEvent */ but I want to make this more universal
-        console.log("started panning")
+        //console.log("started panning")
         const o = dragObject;
         o.mouseStart = event.clientX;
         if(element) o.initialOffset = element.offsetLeft;
@@ -315,7 +315,7 @@ const pan = (
                 offset = clamp(offset, min, max);
                 element.style.left = offset + "px"; 
 
-                console.log(offset);
+                //console.log(offset);
             }   
         }         
     }

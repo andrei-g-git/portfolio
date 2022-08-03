@@ -19,14 +19,15 @@ const curryResizeListenerPixels = (computeWidthPercentOfViewport: Function): Fun
 
 export const useContributionsResizeListenerPixels = curryResizeListenerPixels(computeWidthPercentOfViewport);
 
-export const useContributionsResizeListener = (breakpoints: {breakpoint: number, width: string}[]): string => {
-    const [width, setWidth] = useState(breakpoints[0].width);
-
+export const useContributionsResizeListenerForRatioAndPixels = (breakpoints: {breakpoint: number, width: string, px: string}[]): [string, string] => {
+    const [width, setWidth] = useState(breakpoints[0].px);//.width);
+    const [percent, setPercent] = useState(breakpoints[0].width);//.width);
     useEffect(() => {
         window.addEventListener("resize", event => {
-            breakpoints.forEach((breakpoint: {breakpoint: number, width: string}) => {
+            breakpoints.forEach((breakpoint: {breakpoint: number, width: string, px: string}) => {
                 if(window.innerWidth < breakpoint.breakpoint){
-                    setWidth(breakpoint.width);
+                    setWidth(breakpoint.px);//.width);
+                    setPercent(breakpoint.width);
                 }
             });
         });            
@@ -34,7 +35,7 @@ export const useContributionsResizeListener = (breakpoints: {breakpoint: number,
         []
     );
     //console.log(width)
-    return width;
+    return [percent, width];
 }
 
 

@@ -34,6 +34,16 @@ export const colabSettings = {
     ]
 };
 
+export const monoSettings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    adaptiveHeight: true
+};
+
 export const getProjectSettings = (imagePaths: string) => {
     return {
         customPaging: (i: number): any => {
@@ -62,7 +72,7 @@ export const getProjectSettings = (imagePaths: string) => {
         },
         dots: true,
         dotsClass: "slick-dots slick-thumb",
-        infinite: true,
+        infinite: false,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1        
