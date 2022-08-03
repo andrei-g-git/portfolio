@@ -61,6 +61,11 @@ const Projects = (props: any) => {
 						true
 					)}
 				/>
+
+                <div className="contributons-title">
+                    Colaborations on other people's projects
+                </div>
+
 				<ModalContext.Provider value={curryStoreSelectedProject( //shouldn't be called ModalContext, it's not for a modal...
 						props.selectColab, 
 						props.toggleModal

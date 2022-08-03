@@ -10,10 +10,12 @@ function ContributionsCarousel(props: any) {
     let width = useContributionsResizeListenerPixels(props.percentWidth);
 
     return (
-        <SlickSwiper items={mapColabSlides(props.items, width, gap, colabSettings)}
-            settings={colabSettings}
-            width={width + "px"}
-        />
+        //<div className="contributions-container">
+            <SlickSwiper items={mapColabSlides(props.items, width, gap, colabSettings)}
+                settings={colabSettings}
+                width={width + "px"}
+            />
+        //</div>
     );
 };
 

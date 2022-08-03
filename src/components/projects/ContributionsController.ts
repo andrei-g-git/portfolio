@@ -8,6 +8,9 @@ const curryResizeListenerPixels = (computeWidthPercentOfViewport: Function): Fun
         useEffect(() => {
             window.addEventListener("resize", event => {
                 setWidth(computeWidthPercentOfViewport(percentWidth));
+                if(window.innerWidth < 480){ //hardcoded crap...
+                    setWidth(computeWidthPercentOfViewport(1.0))
+                }
             });
         },
             []
@@ -18,6 +21,7 @@ const curryResizeListenerPixels = (computeWidthPercentOfViewport: Function): Fun
 };
 
 export const useContributionsResizeListenerPixels = curryResizeListenerPixels(computeWidthPercentOfViewport);
+
 
 export const useContributionsResizeListenerForRatioAndPixels = (breakpoints: {breakpoint: number, width: string, px: string}[]): [string, string] => {
     const [width, setWidth] = useState(breakpoints[0].px);//.width);

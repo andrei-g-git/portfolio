@@ -5,17 +5,16 @@
 .projects-container{
     display: flex;
     flex-direction: column;
-    //justify-content: center;
     align-items: center;
     width: 100vw;
 
-    //gap: 50px;
+    gap: 40px;
 
     @include themed(){
         background-image: linear-gradient(theme-get("bg-primary"), rgb(193, 255, 252));
     }
     .projects-title{
-        @include pageTitle();
+        @include pageTitle(40px, 0);
     }
 
     .showcase-container{

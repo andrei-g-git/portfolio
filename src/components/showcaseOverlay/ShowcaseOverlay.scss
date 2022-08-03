@@ -31,12 +31,6 @@
         }
     }
 
-    // @media(max-width: map-get($breakpoints, "mobile")){
-    //     min-width: 100%;
-    //     height: auto;
-    //     //object-fit: contain;
-    // }
-
     @media(max-width: map-get($breakpoints, "tablet")){
         &:active{
             opacity: 0.8;

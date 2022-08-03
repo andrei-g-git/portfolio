@@ -17,14 +17,7 @@ function ColabCarousel(props: any) {
 
 	return (
 		<div className="carousel-container">
-				{/* <SlickSwiper items = {mapShowcaseItems(
-						props.showcaseItems,
-						notifyParent,
-						props 
-					)}
-				/> */}
                 <SlickSwiper items={props.showcaseItems.map((item: ColabObject) => item.image)}/>
-
 		</div>
 	);
 }
