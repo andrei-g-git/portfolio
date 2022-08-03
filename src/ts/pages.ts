@@ -21,7 +21,7 @@ export class Pages {
         return {
             index: 2,
             name: "projects",
-            height: "100vh",
+            height: "130vh",
             mobileHeight: "199vh",
             tabletHeight: "199vh"
         };

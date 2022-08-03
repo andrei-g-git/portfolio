@@ -28,6 +28,9 @@
             flex-direction: column;
             gap: 10px;
         }
+        @media(max-width: map-get($breakpoints, "mobile")){
+            width: 100%;
+        }
     }
 }
 

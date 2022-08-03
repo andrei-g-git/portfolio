@@ -2,17 +2,11 @@ import { useState } from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { toggledShowcaseModal } from '../../redux/actions';
-import ProjectSimpleGallery from '../projectPics/ProjectSimpleGallery';
 import { getDelayAndAppendToClassName } from './ExpandProjectController';
 import TextButton from '../buttons/TextButton';
 import ProjectInfo from './ProjectInfo';
-import ProjectCarousel from './ProjectCarousel';
-import ProjectCarouselMono from './ProjectCarouselMono';
-import "./ExpandProject.scss";
-
-//test
-import ThumbGallerySwiper from '../projectPics/ThumbGallerySwiper';
 import ProjectSwiper from './ProjectSwiper';
+import "./ExpandProject.scss";
 
 export const ExpandProject = (props: any) => {
 
@@ -31,11 +25,6 @@ export const ExpandProject = (props: any) => {
                     >
 
                         <div className="expand-project-upper">
-                            {/* <ProjectSimpleGallery images={props.images} /> */}
-                            {/* <ProjectCarousel images = {props.images}//images={props.images} 
-                                percentWidth={0.85 * widthRatio}
-                            /> */}
-                            {/* <ProjectCarouselMono images = {props.images} /> */}
                             <ProjectSwiper images={props.images}/>
 
                             <div className="expand-project-info-wrapper">

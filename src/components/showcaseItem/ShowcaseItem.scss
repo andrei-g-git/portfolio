@@ -1,9 +1,13 @@
+@import "../../css/Variables.scss";
+
 .showcase-item-container{
     position: relative;
     width: 400px;
-    height: 300px;
+    aspect-ratio: 16/9;
 
-    left: 50%;
+    @media(max-width: map-get($breakpoints, "mobile")){
+        width: 100%;
+    }
 
     .showcase-pic{
         position: absolute;
@@ -13,9 +17,5 @@
         height: 100%;
         background-repeat: no-repeat;
         background-size: cover;
-
-        //border: solid 2px blue;
-
-        //z-index: 9999999;
     }
 }

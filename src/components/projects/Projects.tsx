@@ -12,7 +12,6 @@ import ModalContext from '../_context/contexts';
 import "./Projects.scss";
 
 const ShowcaseOverlayWithThemeState = withThemeState(ShowcaseOverlay);
-const ColabCarouselWithModalState = withModalState(ColabCarousel);
 
 const Projects = (props: any) => {
 
@@ -62,16 +61,11 @@ const Projects = (props: any) => {
 						true
 					)}
 				/>
-				{/* <ColabCarouselWithModalState showcaseItems={getColabs} */}
 				<ModalContext.Provider value={curryStoreSelectedProject( //shouldn't be called ModalContext, it's not for a modal...
 						props.selectColab, 
 						props.toggleModal
 					)}
 				>
-					{/* <ColabCarousel showcaseItems={getColabs()}
-						ShowcaseItem={ShowcaseItem}
-						Overlay={ShowcaseOverlayWithThemeState}
-					/> */}
                     <ContributionsCarousel items={getColabs()}
                         percentWidth={0.8}
                     />

@@ -3,7 +3,7 @@ import ProjectSlide from "../projectPics/ProjectSlide"
 import "./ProjectSwiper.scss";
 
 
-function ProjectSwiper(props: any) {
+function ProjectSwiper(props: any) { //could be a higher order component
     return (
         <div className="project-swiper-container">
             <ThumbGallerySwiper images={mapProjectSlides(props.images)} />

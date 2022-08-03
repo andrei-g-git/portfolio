@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
-import { Navigation, Thumbs } from "swiper";
+import { Navigation, Thumbs, Pagination } from "swiper";
 
 function ThumbGallerySwiper(props) {
     const [thumbsSwiper, setThumbsSwiper] = useState();
@@ -19,15 +19,14 @@ function ThumbGallerySwiper(props) {
                     "--swiper-pagination-color": "#fff",
                 }}
                 loop={false}
-                spaceBetween={10}
                 navigation={true}
+                pagination={true}
                 thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
-                modules={[Navigation, Thumbs]}
-                className="mySwiper2"
+                modules={[Navigation, Thumbs, Pagination]}
             >
                 {
                     props.images.map((image, index) => 
-                        <SwiperSlide>
+                        <SwiperSlide key={index}>
                             {
                                 image
                             }
@@ -47,7 +46,7 @@ function ThumbGallerySwiper(props) {
             >
                 {
                     props.images.map((image, index) => 
-                        <SwiperSlide>
+                        <SwiperSlide key={index}>
                             {
                                 image
                             }
