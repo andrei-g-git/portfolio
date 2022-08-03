@@ -4,10 +4,20 @@
     //width: 80%;
 }
 
-.slick-dots{ //for the project carousel, there;s no api to set this stuff programatically
-    bottom: - calc(110% / 4); //doesn't let me subtract small value so I gotta give 110%
+//the dots are the actual ... dots ... not a reference to the slides. This does nothing for slide width.
+// .slick-dots{ //for the project carousel, there;s no api to set this stuff programatically
+//     bottom: - calc(110% / 4); //doesn't let me subtract small value so I gotta give 110%
+// }
+// .slick-dots li{
+//     width: calc(25% - 5px);
+//     height: 100%;
+// }    
+
+.slick-dots{
+    display: flex;
+    justify-content: center;
+
+    & li{
+        width: auto;
+    }
 }
-.slick-dots li{
-    width: calc(25% - 5px);
-    height: 100%;
-}    

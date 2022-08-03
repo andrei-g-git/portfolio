@@ -1,11 +1,6 @@
 @import "../../css/Variables.scss";
 
 .button-border{
-
-    // $scale-on-hover: 1.06;
-    // $hover-transition-duration: 0.15s;
-    // $translateX-active: 7px;
-
     width: fit-content;
     height: fit-content;
     padding: 3px 15px;
@@ -13,6 +8,10 @@
     border-radius: 6px;
     border-style: solid;
     font-size: large;
+
+    @media(max-width: map-get($breakpoints, "mobile")){
+        font-size: medium;
+    }
 
     transform: translateX(0)
         scale(1, 1);

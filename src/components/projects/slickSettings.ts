@@ -12,9 +12,7 @@ export const colabSettings = {
             breakpoint: 1280,
             settings: {
                 slidesToShow: 3,
-                slidesToScroll: 1,
-                infinite: false,
-                dots: true
+                slidesToScroll: 1
             }
         },
         {
