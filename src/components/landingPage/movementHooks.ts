@@ -7,10 +7,59 @@ import Panzoom, { PanzoomObject } from "@panzoom/panzoom";
     useHorizontalPanning //
  */
 
-let test: PanzoomObject;
-
-//I should probably give up snap-panning if it doesn't work out perfectly, switch to smooth panning and add a bunch of glowing arrows or some shit...
 export const useHorizontalPanningPANZOOM = (identifier: string, maxWidth: number): void => {
+    useEffect(() => {
+        let element: HTMLElement | null = (document.getElementsByClassName(identifier) as HTMLCollectionOf<HTMLElement>)[0];
+        if(element){
+            const panzoom = Panzoom(element, {disableYAxis: true, disableZoom: true, touchAction: "pan-y", animate: true, duration: 150});
+
+            endPanzoom(
+                element,
+                curryPanzoomPan(panzoom),
+                curryGetPanX(panzoom),
+                maxWidth,
+                clamp
+            );
+        }
+    },
+        []
+    )
+};
+
+const startPanzoom = (element: HTMLElement | null, panObject: {start: number}, getPanX: Function) =>{
+    element?.addEventListener("panzoomstart", (event) => {
+        event.preventDefault();
+        panObject.start = getPanX();  
+    });
+}
+
+const endPanzoom = (
+    element: HTMLElement | null, 
+    panzoomPan: Function,
+    getPanX: Function,
+    max: number,
+    clamp: Function
+): void => {
+    element?.addEventListener("panzoomend", (event) => {
+        event.preventDefault();
+        const x = (max - window.innerWidth) / 2; 
+        panzoomPan(clamp(getPanX(), -x, x), 0);
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+let test: PanzoomObject;
+//I should probably give up snap-panning if it doesn't work out perfectly, switch to smooth panning and add a bunch of glowing arrows or some shit...
+export const useHorizontalPanningPANZOOM_onhold = (identifier: string, maxWidth: number): void => {
     useEffect(() => {
         let element: HTMLElement | null = (document.getElementsByClassName(identifier) as HTMLCollectionOf<HTMLElement>)[0];
         if(element){

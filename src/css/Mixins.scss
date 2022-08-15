@@ -4,7 +4,7 @@
     #{$className}{
         transform-origin: left;
         animation: $animation 
-            $maxDuration * $percent/100 
+            calc($maxDuration * $percent/100) 
             forwards ease-in-out;
     }
 }

@@ -10,7 +10,9 @@ import {
     useCharacterEntrance 
 } from './landingPageController';
 import { 
-    useHorizontalPanningPANZOOM, 
+    useHorizontalPanningPANZOOM_onhold, 
+    useHorizontalPanning_onhold,
+    useHorizontalPanningPANZOOM,
     useCenteredResizing 
 } from './movementHooks';
 import ShelfDoodad from '../shelfDoodad/ShelfDoodad';
@@ -25,6 +27,7 @@ export const LandingPage = (props: any) => { //make this thing pannable horizont
 
     useCenteredResizing("landing-page-container", 1920);
 
+    //useHorizontalPanningPANZOOM_onhold("landing-page-container", 1920);
     useHorizontalPanningPANZOOM("landing-page-container", 1920);
 
     const initialAnim = "src/" + animations.walkingIn.path;
