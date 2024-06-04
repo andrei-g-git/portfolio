@@ -1,16 +1,19 @@
 import { Landing } from "@/features/landing";
-import { SideContent } from "@/features/side-content";
-import { Headline} from "@/features/about";
+import { JobExperience, SideContent } from "@/features/side-content";
+import { Headline, ExtraAbout} from "@/features/about";
 import "bootstrap/dist/css/bootstrap.css"
 import "./main.scss";
+import { ExperienceSection } from "./experience";
+import experience from "../assets/text/experience.json";
+import { SkillTag } from "@/components";
 
 function Main(props: any) {
 
     return (
-        <div className="container">
+        <div className="container-fluid">
             <Landing />
 
-            <div className="row">
+            <div className="row d-flex" style={{padding: "0 10%"}}>
                 <div className="col-5 sticky-top vh-100"> {/* apparently the sticky ends when you pass the first other element in the block, not when you pass the sticky element's content */}
                     <SideContent>
                         <SideContent.Description>
@@ -29,8 +32,12 @@ function Main(props: any) {
 
                 </div> 
 
-                <div className="container col-7" style={{border: "2px solid red", height: "4900px"}}>
-
+                <div className="container col-7 px-5" style={{border: "2px solid red", height: "4900px"}}>
+                    <ExtraAbout />
+                    <ExperienceSection experience={experience}
+                        Job={JobExperience}
+                        Skill={SkillTag}
+                    />
                 </div>
             </div>
 

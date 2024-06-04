@@ -1,0 +1,56 @@
+[
+    {
+        "startDate": 1999,
+        "endDate": 1999,
+        "jobTitle": "title",
+        "industry": "industry",
+        "firm": "firm",
+        "contributions": [
+            "Lorem ipsum dolor sit amet, elit, sed do eiusmod tempor incididunt ut labore ",
+            "Lorem ipsum dolor sit amet, elit, sed do eiusmod tempor incididunt ut labore ",
+            "Lorem ipsum dolor sit amet, elit, sed do eiusmod tempor incididunt ut labore "                        
+        ],
+        "skills": [
+            "skill",
+            "skill",
+            "skill",
+            "skill"
+        ]    
+    },
+    {
+        "startDate": 1999,
+        "endDate": 1999,
+        "jobTitle": "title",
+        "industry": "industry",
+        "firm": "firm",
+        "contributions": [
+            "Lorem ipsum dolor sit amet, elit, sed do eiusmod tempor incididunt ut labore ",
+            "Lorem ipsum dolor sit amet, elit, sed do eiusmod tempor incididunt ut labore ",
+            "Lorem ipsum dolor sit amet, elit, sed do eiusmod tempor incididunt ut labore "                        
+        ],
+        "skills": [
+            "skill",
+            "skill",
+            "skill",
+            "skill"
+        ]      
+    },
+    {
+        "startDate": 1999,
+        "endDate": 1999,
+        "jobTitle": "title",
+        "industry": "industry",
+        "firm": "firm",
+        "contributions": [
+            "Lorem ipsum dolor sit amet, elit, sed do eiusmod tempor incididunt ut labore ",
+            "Lorem ipsum dolor sit amet, elit, sed do eiusmod tempor incididunt ut labore ",
+            "Lorem ipsum dolor sit amet, elit, sed do eiusmod tempor incididunt ut labore "                        
+        ],
+        "skills": [
+            "skill",
+            "skill",
+            "skill",
+            "skill"
+        ]     
+    }        
+]
