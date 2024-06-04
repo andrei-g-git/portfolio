@@ -4,13 +4,7 @@ import { ReactNode } from "react";
 function SideContent({children}: {children: ReactNode}) {
 
     return (
-        <div /* className="container" */ style={{border: "2px solid green", height: "1500px"}}>
-            {/* <div className="side-description">
-
-            </div>
-            <div className="side-navigation">
-                
-            </div> */}
+        <div style={{border: "2px solid green", height: "100%"}}>
             {children}
         </div>
     )

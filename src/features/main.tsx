@@ -11,7 +11,7 @@ function Main(props: any) {
             <Landing />
 
             <div className="row">
-                <div className="col-5 sticky-top vh-100"> 
+                <div className="col-5 sticky-top vh-100"> {/* apparently the sticky ends when you pass the first other element in the block, not when you pass the sticky element's content */}
                     <SideContent>
                         <SideContent.Description>
                             <Headline />
@@ -29,7 +29,7 @@ function Main(props: any) {
 
                 </div> 
 
-                <div className="container col-7" style={{border: "2px solid red", height: "1500px"}}>
+                <div className="container col-7" style={{border: "2px solid red", height: "4900px"}}>
 
                 </div>
             </div>
