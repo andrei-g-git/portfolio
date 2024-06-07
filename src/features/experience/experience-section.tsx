@@ -1,4 +1,5 @@
 import { ExperienceSchema } from "@/types";
+import { ReactNode } from "react";
 
 type JobFCProps = {
     startDate: number, 
@@ -14,11 +15,15 @@ type JobFCProps = {
 function ExperienceSection({
     experience, 
     Job, 
-    Skill
+    Skill,
+    //ResumeLink,
+    children
 }: {
     experience: ExperienceSchema[], 
     Job: React.FunctionComponent<JobFCProps>, 
-    Skill: React.FunctionComponent<{text: string}>
+    Skill: React.FunctionComponent<{text: string}>,
+    //ResumeLink: React.FunctionComponent<LinkButtonProps>,
+    children: ReactNode
 }) {
 
     return (
@@ -35,6 +40,9 @@ function ExperienceSection({
                         SkillTag={Skill}
                     />
                 ) 
+            }
+            {
+                children
             }
         </div>
     )

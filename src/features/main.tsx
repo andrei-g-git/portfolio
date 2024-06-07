@@ -6,7 +6,9 @@ import "./main.scss";
 import { ExperienceSection } from "./experience";
 import experience from "../assets/text/experience.json";
 import { SkillTag } from "@/components";
+import BigButton from "@/components/buttons/big-button";
 
+//this is gearing up to become a god component...
 function Main(props: any) {
 
     return (
@@ -37,7 +39,11 @@ function Main(props: any) {
                     <ExperienceSection experience={experience}
                         Job={JobExperience}
                         Skill={SkillTag}
-                    />
+                    >
+                        <BigButton text="View Resume"
+                            link="https://www.wikipedia.org"
+                        />
+                    </ExperienceSection>
                 </div>
             </div>
 
