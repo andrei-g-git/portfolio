@@ -4,11 +4,13 @@ import {
 } from "./schemas";
 
 import {
-    LinkButtonProps
+    LinkButtonProps,
+    GaugeProps
 } from "./props";
 
 export type {
     ExperienceSchema, 
     AboutSchema,
-    LinkButtonProps
+    LinkButtonProps,
+    GaugeProps
 }

@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.css"
 import "./main.scss";
 import { ExperienceSection } from "./experience";
 import experience from "../assets/text/experience.json";
-import { SkillTag } from "@/components";
+import { Gauge, SkillTag } from "@/components";
 import BigButton from "@/components/buttons/big-button";
 
 //this is gearing up to become a god component...
@@ -44,6 +44,12 @@ function Main(props: any) {
                             link="https://www.wikipedia.org"
                         />
                     </ExperienceSection>
+
+
+                    <Gauge index={1}
+                        proficiency={75}
+                    />
+
                 </div>
             </div>
 
