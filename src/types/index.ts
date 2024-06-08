@@ -1,16 +1,20 @@
 import {
     ExperienceSchema,
-    AboutSchema
+    AboutSchema,
+    SkillSchema
 } from "./schemas";
 
 import {
     LinkButtonProps,
-    GaugeProps
+    GaugeProps,
+    SkillProps
 } from "./props";
 
 export type {
     ExperienceSchema, 
     AboutSchema,
     LinkButtonProps,
-    GaugeProps
+    GaugeProps,
+    SkillSchema,
+    SkillProps
 }

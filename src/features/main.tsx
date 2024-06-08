@@ -7,6 +7,8 @@ import { ExperienceSection } from "./experience";
 import experience from "../assets/text/experience.json";
 import { Gauge, SkillTag } from "@/components";
 import BigButton from "@/components/buttons/big-button";
+import SkillGroup from "@/components/fancy/skill-group";
+import skills from "../../src/assets/text/skills.json"
 
 //this is gearing up to become a god component...
 function Main(props: any) {
@@ -46,9 +48,14 @@ function Main(props: any) {
                     </ExperienceSection>
 
 
-                    <Gauge index={1}
-                        proficiency={75}
+                    <br/>
+                    <br/>
+
+                    <SkillGroup type="hard"
+                        skills={skills.filter(skill => skill.hardSkill == true)}
                     />
+
+
 
                 </div>
             </div>

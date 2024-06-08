@@ -1,0 +1,16 @@
+.skill-icon-and-name{
+    display: flex;
+
+    .skill-icon{
+        width: 20px;
+        height: 20px;
+        filter: brightness(0)
+    }    
+
+    .skill-name{
+        margin: unset;
+        // @include themed(){
+        //     color: theme-get("text-primary");
+        // }
+    }
+}

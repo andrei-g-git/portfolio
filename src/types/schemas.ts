@@ -15,3 +15,9 @@ export type AboutSchema = {
     headline: string,
     moreAbout: string
 }
+
+export type SkillSchema = {
+    name: string,
+    proficiency: number,
+    hardSkill: boolean
+}

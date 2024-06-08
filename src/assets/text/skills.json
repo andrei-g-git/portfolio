@@ -1,0 +1,27 @@
+[
+    {
+        "name": "react",
+        "proficiency": 100,
+        "hardSkill": true
+    },
+    {
+        "name": "python",
+        "proficiency": 80,
+        "hardSkill": true
+    },
+    {
+        "name": "angular",
+        "proficiency": 60,
+        "hardSkill": true
+    },
+    {
+        "name": "communication",
+        "proficiency": "100",
+        "hardSkill": false
+    },
+    {
+        "name": "good-looks",
+        "proficiency": 95,
+        "hardSkill": false
+    }              
+]
