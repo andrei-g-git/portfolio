@@ -3,11 +3,14 @@ import Skill from './skill';
 import Gauge from './gauge';
 //import skills from "./../../assets/text/skills.json"
 import { SkillSchema } from '@/types'; //should be prop anywayh
+import { observeIntersection } from '@/utils';
 
 const SkillGroup = ({skills, type}: {skills: any, type: "soft" | "hard"}) => {
 
     useEffect(() => {
         console.log(skills)
+
+        observeIntersection(startAnimation(".translate-horizontal-percent"), ".gauge-container")
     },
         []
     );
@@ -35,5 +38,16 @@ const SkillGroup = ({skills, type}: {skills: any, type: "soft" | "hard"}) => {
         </div>
     );
 };
+
+
+const startAnimation = (className: string) => 
+    (entries: any, observer: any) => {
+        let count = 1;
+        entries.forEach((entry: any) => {
+            entry.target.classList.toggle(`${className}-${count * 10}`, entry.isIntersecting);
+            count++;
+        });
+    }
+  
 
 export default SkillGroup;
