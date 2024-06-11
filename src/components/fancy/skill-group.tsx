@@ -26,7 +26,12 @@ const SkillGroup = ({skills, type}: {skills: any, type: "soft" | "hard"}) => {
             {
                 skills.map((skill: any/* SkillSchema */, index: number) => 
                     <Skill name={skill.name}
-                        icon={pickReactIcon(skill.name, "black", 24)}
+                        icon={
+                            type =="hard" ? 
+                                pickReactIcon(skill.name, "black", 24)
+                            :
+                                undefined
+                            }
                         index={index}
                         key={index}
                     >

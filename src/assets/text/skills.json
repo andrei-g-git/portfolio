@@ -6,22 +6,125 @@
     },
     {
         "name": "python",
-        "proficiency": 80,
+        "proficiency": 90,
         "hardSkill": true
     },
     {
         "name": "angular",
+        "proficiency": 70,
+        "hardSkill": true
+    },
+    {
+        "name": "typescript",
+        "proficiency": 100,
+        "hardSkill": true
+    },
+    {
+        "name": "css",
+        "proficiency": 100,
+        "hardSkill": true
+    },
+    {
+        "name": "node",
+        "proficiency": 90,
+        "hardSkill": true
+    },
+    {
+        "name": "mysql",
+        "proficiency": 90,
+        "hardSkill": true
+    },
+    {
+        "name": "next",
+        "proficiency": 100,
+        "hardSkill": true
+    },
+    {
+        "name": "bootstrap",
+        "proficiency": 90,
+        "hardSkill": true
+    },    
+    {
+        "name": "tailwind",
+        "proficiency": 80,
+        "hardSkill": true
+    },   
+    {
+        "name": "docker",
+        "proficiency": 70,
+        "hardSkill": true
+    }, 
+    {
+        "name": "git",
+        "proficiency": 100,
+        "hardSkill": true
+    }, 
+    {
+        "name": "nginx",
+        "proficiency": 70,
+        "hardSkill": true
+    },                                
+    {
+        "name": "linux",
+        "proficiency": 70,
+        "hardSkill": true
+    },  
+    {
+        "name": "pytorch",
+        "proficiency": 80,
+        "hardSkill": true
+    },
+    {
+        "name": "java",
+        "proficiency": 80,
+        "hardSkill": true
+    },
+    {
+        "name": "c#",
+        "proficiency": 70,
+        "hardSkill": true
+    },
+    {
+        "name": "scrum",
         "proficiency": 60,
         "hardSkill": true
     },
     {
+        "name": "flask",
+        "proficiency": 80,
+        "hardSkill": true
+    },
+
+
+
+    {
         "name": "communication",
-        "proficiency": "100",
+        "proficiency": 100,
         "hardSkill": false
     },
     {
         "name": "good-looks",
-        "proficiency": 95,
+        "proficiency": 100,
         "hardSkill": false
-    }              
+    },   
+    {
+        "name": "team player",
+        "proficiency": 100,
+        "hardSkill": false
+    },
+    {
+        "name": "large penis",
+        "proficiency": 100,
+        "hardSkill": false
+    },
+    {
+        "name": "punctuality",
+        "proficiency": 70,
+        "hardSkill": false
+    }  
 ]
+
+
+
+
+

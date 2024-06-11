@@ -60,10 +60,11 @@ function Main(props: any) {
                     <SkillGroup type="hard"
                         skills={skills.filter(skill => skill.hardSkill == true)}
                     />
-
-                    {/* {
-                        makeIcon("react", "purple", 100)
-                    } */}
+                    <br/>
+                    <br/>
+                    <SkillGroup type="soft"
+                        skills={skills.filter(skill => skill.hardSkill == false)}
+                    />
                 
 
                 </div>

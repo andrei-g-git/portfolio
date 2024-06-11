@@ -8,7 +8,10 @@ function Skill({index, name, icon, children}: SkillProps) {
 		>
 			<div className="skill-icon-and-name">
 				{
-					icon
+					icon ? 
+						icon
+					:
+						<div></div>
 				}
 				<p className="skill-name">
 					{name}
