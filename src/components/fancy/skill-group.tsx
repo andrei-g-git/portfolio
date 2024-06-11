@@ -4,6 +4,7 @@ import Gauge from './gauge';
 //import skills from "./../../assets/text/skills.json"
 import { SkillSchema } from '@/types'; //should be prop anywayh
 import { observeIntersection } from '@/utils';
+import { pickReactIcon } from '@/ts';
 
 const SkillGroup = ({skills, type}: {skills: any, type: "soft" | "hard"}) => {
 
@@ -25,7 +26,7 @@ const SkillGroup = ({skills, type}: {skills: any, type: "soft" | "hard"}) => {
             {
                 skills.map((skill: any/* SkillSchema */, index: number) => 
                     <Skill name={skill.name}
-                        icon={`src/assets/images/icons/skills/${skill.name}.png`}
+                        icon={pickReactIcon(skill.name, "black", 24)}
                         index={index}
                         key={index}
                     >

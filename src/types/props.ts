@@ -1,4 +1,5 @@
 import { ReactNode } from "react"
+import { IconType } from "react-icons"
 
 export type LinkButtonProps = {
     text: string,
@@ -13,6 +14,6 @@ export type GaugeProps = {
 export type SkillProps = {
     index: number,
     name: string,
-    icon: string, //should be generic or w/e with *.extension substring
+    icon: /* string |  */JSX.Element | undefined, //should be generic or w/e with *.extension substring
     children: ReactNode
 }

@@ -10,6 +10,12 @@ import BigButton from "@/components/buttons/big-button";
 import SkillGroup from "@/components/fancy/skill-group";
 import skills from "../../src/assets/text/skills.json"
 
+import { pickReactIcon } from "@/ts/factories";
+//import { pickReactIcon } from "@/ts";
+//import { pickReactIcon } from "@/ts/factories";
+//import { pickReactIcon } from "C:/work/js/portfolio/src/ts/factories.ts"
+//import { pickReactIcon} from "./../ts/factories"
+
 //this is gearing up to become a god component...
 function Main(props: any) {
 
@@ -55,7 +61,10 @@ function Main(props: any) {
                         skills={skills.filter(skill => skill.hardSkill == true)}
                     />
 
-
+                    {/* {
+                        makeIcon("react", "purple", 100)
+                    } */}
+                
 
                 </div>
             </div>
@@ -63,6 +72,13 @@ function Main(props: any) {
 
         </div>
     )
+}
+
+const makeIcon = (name: string, color: string, size: number) => {
+    //const capitalized = name.charAt(0).toUpperCase();
+    // const ReactIcon =  AllIcons[`Fa${capitalized}`];
+    // return <ReactIcon />
+    return pickReactIcon(name, color, size);
 }
 
 export default Main

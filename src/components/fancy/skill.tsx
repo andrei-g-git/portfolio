@@ -7,10 +7,9 @@ function Skill({index, name, icon, children}: SkillProps) {
 			id={`gauge-container-${index}`}
 		>
 			<div className="skill-icon-and-name">
-				<img className="skill-icon"
-					src={icon}
-					alt="icon"
-				/>
+				{
+					icon
+				}
 				<p className="skill-name">
 					{name}
 				</p>				
