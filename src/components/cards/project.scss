@@ -1,0 +1,42 @@
+
+
+.project-link-container{
+    position: relative;
+    width: 100%;
+    height: 100%;    
+    .project-image{
+        width: 100%;
+        height: 100%;
+    }    
+}
+
+
+.project-right{
+
+    .project-name-and-type{
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+    }
+    .project-dependencies{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem
+    }
+}
+
+
+.project-image{
+    flex-grow: 2;
+
+    width: 250px;
+    height: 350px;
+
+    flex-shrink: 0;
+
+    background-position: center;
+    background-repeat:  no-repeat;
+    background-size: contain;
+
+
+}

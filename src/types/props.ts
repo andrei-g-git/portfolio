@@ -1,5 +1,6 @@
 import { ReactNode } from "react"
 import { IconType } from "react-icons"
+import { ProjectSchema } from "./schemas"
 
 export type LinkButtonProps = {
     text: string,
@@ -17,3 +18,7 @@ export type SkillProps = {
     icon: /* string |  */JSX.Element | undefined, //should be generic or w/e with *.extension substring
     children: ReactNode
 }
+
+// export interface ProjectProps extends ProjectSchema {
+//     Image: React.FunctionComponent | string
+// }

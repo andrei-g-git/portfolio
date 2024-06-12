@@ -18,6 +18,10 @@ import { DiMysql, DiNginx, DiScrum } from "react-icons/di";
 import { IconContext } from "react-icons";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 
+import wikipeddia from "../assets/images/websites/wikipedia.png"
+import duckduckgo from "../assets/images/websites/ducduckgo.png"
+import python from "../assets/images/websites/python.png"
+
 export const pickReactIconOld = async (name: string) => {
     // const capitalized = name.charAt(0).toUpperCase();
     // const dict = {};
@@ -91,6 +95,18 @@ export const pickReactIcon = (name: string, color: string, size: number) => {
         // case "":
         //     return <IconContext.Provider value={{color: color, size: size.toString()}}><Fa /></IconContext.Provider>                                                                         
                             
+    }
+}
+
+
+export const pickLocalImage = (path: string) => {
+    switch(path){
+        case "duckduckgo":
+            return duckduckgo;
+        case "wikipedia":
+            return wikipeddia;
+        default:
+            return python;
     }
 }
 

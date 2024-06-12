@@ -9,8 +9,10 @@ import { Gauge, SkillTag } from "@/components";
 import BigButton from "@/components/buttons/big-button";
 import SkillGroup from "@/components/fancy/skill-group";
 import skills from "../../src/assets/text/skills.json"
+import projects from "../../src/assets/text/projects.json"
 
 import { pickReactIcon } from "@/ts/factories";
+import { Projects } from "./projects";
 //import { pickReactIcon } from "@/ts";
 //import { pickReactIcon } from "@/ts/factories";
 //import { pickReactIcon } from "C:/work/js/portfolio/src/ts/factories.ts"
@@ -18,7 +20,7 @@ import { pickReactIcon } from "@/ts/factories";
 
 //this is gearing up to become a god component...
 function Main(props: any) {
-
+    
     return (
         <div className="container-fluid">
             <Landing />
@@ -66,6 +68,18 @@ function Main(props: any) {
                         skills={skills.filter(skill => skill.hardSkill == false)}
                     />
                 
+
+                    <br />
+                    <br />
+
+                    <div>
+                        projects
+                    </div>
+
+                    <br />
+                    <br />
+
+                    <Projects projects={projects}/>
 
                 </div>
             </div>

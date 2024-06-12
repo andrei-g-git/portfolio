@@ -21,3 +21,12 @@ export type SkillSchema = {
     proficiency: number,
     hardSkill: boolean
 }
+
+export type ProjectSchema = {
+    name: string,
+    type: string, 
+    description: string, 
+    dependencies: string[],
+    image: string,
+    url: string
+}

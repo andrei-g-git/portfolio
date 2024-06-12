@@ -1,13 +1,15 @@
 import {
     ExperienceSchema,
     AboutSchema,
-    SkillSchema
+    SkillSchema,
+    ProjectSchema
 } from "./schemas";
 
 import {
     LinkButtonProps,
     GaugeProps,
-    SkillProps
+    SkillProps,
+    //ProjectProps
 } from "./props";
 
 export type {
@@ -16,5 +18,7 @@ export type {
     LinkButtonProps,
     GaugeProps,
     SkillSchema,
-    SkillProps
+    SkillProps,
+    //ProjectProps,
+    ProjectSchema
 }
