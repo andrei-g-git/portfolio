@@ -13,6 +13,7 @@ import projects from "../../src/assets/text/projects.json"
 
 import { pickReactIcon } from "@/ts/factories";
 import { Projects } from "./projects";
+import { Contributions } from "./contributions";
 //import { pickReactIcon } from "@/ts";
 //import { pickReactIcon } from "@/ts/factories";
 //import { pickReactIcon } from "C:/work/js/portfolio/src/ts/factories.ts"
@@ -80,6 +81,8 @@ function Main(props: any) {
                     <br />
 
                     <Projects projects={projects}/>
+
+                    <Contributions />
 
                 </div>
             </div>
