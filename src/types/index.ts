@@ -10,6 +10,8 @@ import {
     GaugeProps,
     SkillProps,
     //ProjectProps
+    ContributionWeek,
+    ContributionDay
 } from "./props";
 
 export type {
@@ -20,5 +22,7 @@ export type {
     SkillSchema,
     SkillProps,
     //ProjectProps,
-    ProjectSchema
+    ProjectSchema,
+    ContributionWeek,
+    ContributionDay
 }

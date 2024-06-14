@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.css"
 import "./main.scss";
 import { ExperienceSection } from "./experience";
 import experience from "../assets/text/experience.json";
-import { Gauge, SkillTag } from "@/components";
+import { Gauge, SkillTag, YearlyContribution } from "@/components";
 import BigButton from "@/components/buttons/big-button";
 import SkillGroup from "@/components/fancy/skill-group";
 import skills from "../../src/assets/text/skills.json"
@@ -87,7 +87,7 @@ function Main(props: any) {
                     <Projects projects={projects.filter(project => project.colab == true)}/>
                     <br />
                     <br />    
-                    <Contributions />
+                    <Contributions Chart={YearlyContribution}/>
 
                 </div>
             </div>

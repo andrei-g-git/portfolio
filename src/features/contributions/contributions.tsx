@@ -1,6 +1,7 @@
+import { ContributionWeek } from "@/types";
 import { useEffect, useState } from "react"
 
-function Contributions() {
+function Contributions({Chart}: {Chart: React.FunctionComponent<{weeks: ContributionWeek[]}>}) {
     let placeholderContributions: any[] = [];
     const [contributions, setContributions] = useState<any>([]);
     
@@ -9,14 +10,15 @@ function Contributions() {
     useEffect(() => {
         [2021, 2022, 2023, 2024].forEach(year => {
             getContributionsByYear(
-                "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",
+                "token  REPLACE WITH TOKEN FROM Z-SCRATCHPAD.TXT in the root project folder",
                 "andrei-g-git",
                 year
             )
                 .then(yearlyContributions => {
-                    //console.log("contributions:   ", yearlyContributions)   
-                    const abc = 123; //apparently I have to do this so that this block runs, I don't know what the hell is going on....
+                     
+                    const abc = 1234; //apparently I have to do this so that this block runs, I don't know what the hell is going on....
                     placeholderContributions.push(yearlyContributions.data.user.contributionsCollection.contributionCalendar);
+                    //console.log("contributions:   ", placeholderContributions)  
                 })            
         })
 
@@ -26,15 +28,13 @@ function Contributions() {
     )
 
     return (
-        <div>
+        <div className="contributions-wrapper">
             {
                 contributions.map((contrib: any) => {
-
-                    test(contrib)
-                    return <p>{contrib.totalContributions}</p>
-                }
-
-                    
+                        //console.log("yearly:   ", contrib)
+                        const abc = 123;
+                        return <Chart weeks={contrib.weeks}/>
+                    }
                 )
 
             }

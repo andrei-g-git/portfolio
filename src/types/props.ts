@@ -19,6 +19,13 @@ export type SkillProps = {
     children: ReactNode
 }
 
-// export interface ProjectProps extends ProjectSchema {
-//     Image: React.FunctionComponent | string
-// }
+export type ContributionDay = {
+    color: "string",
+    contributionCount: number,
+    date: "string",
+    weekday: number
+}
+
+export type ContributionWeek = {
+    contributionDays: ContributionDay[]
+}
