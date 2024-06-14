@@ -9,12 +9,13 @@ function Contributions() {
     useEffect(() => {
         [2021, 2022, 2023, 2024].forEach(year => {
             getContributionsByYear(
-                "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",
+                "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",
                 "andrei-g-git",
                 year
             )
                 .then(yearlyContributions => {
                     //console.log("contributions:   ", yearlyContributions)   
+                    const abc = 123; //apparently I have to do this so that this block runs, I don't know what the hell is going on....
                     placeholderContributions.push(yearlyContributions.data.user.contributionsCollection.contributionCalendar);
                 })            
         })

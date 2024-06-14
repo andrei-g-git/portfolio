@@ -28,5 +28,6 @@ export type ProjectSchema = {
     description: string, 
     dependencies: string[],
     image: string,
-    url: string
+    url: string,
+    colab: boolean
 }

@@ -20,6 +20,8 @@ import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 
 import wikipeddia from "../assets/images/websites/wikipedia.png"
 import duckduckgo from "../assets/images/websites/ducduckgo.png"
+import proton from "../assets/images/websites/proton.png"
+import github from "../assets/images/websites/github.png"
 import python from "../assets/images/websites/python.png"
 
 export const pickReactIconOld = async (name: string) => {
@@ -105,6 +107,10 @@ export const pickLocalImage = (path: string) => {
             return duckduckgo;
         case "wikipedia":
             return wikipeddia;
+        case "proton":
+            return proton;
+        case "github":
+            return github;            
         default:
             return python;
     }

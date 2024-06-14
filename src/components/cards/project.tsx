@@ -4,7 +4,7 @@ import "./project.scss";
 
 import { pickLocalImage } from "@/ts/factories";
 
-function Project({name ,type, description, dependencies, image, url}: ProjectSchema) {
+function Project({name ,type, description, dependencies, image, url, colab}: ProjectSchema) {
     console.log("url", url)
     return (
         <div className="container"> {/* "project-container" */}

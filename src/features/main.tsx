@@ -80,8 +80,13 @@ function Main(props: any) {
                     <br />
                     <br />
 
-                    <Projects projects={projects}/>
+                    <Projects projects={projects.filter(project => project.colab == false)}/>
 
+                    <br />
+                    <br />
+                    <Projects projects={projects.filter(project => project.colab == true)}/>
+                    <br />
+                    <br />    
                     <Contributions />
 
                 </div>

@@ -15,6 +15,7 @@ function Projects({projects}: {projects: ProjectSchema[]}) {
                         dependencies={project.dependencies}
                         image={project.image}
                         url={project.url}
+                        colab={project.colab}
                     />
                 )
             }
