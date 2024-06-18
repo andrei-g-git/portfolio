@@ -1,3 +1,5 @@
+et --hard HEAD
+
 # Logs
 logs
 *.log

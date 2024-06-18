@@ -1,7 +1,7 @@
 import { ContributionWeek } from "@/types";
 import { useEffect, useState } from "react"
 
-function Contributions({Chart}: {Chart: React.FunctionComponent<{weeks: ContributionWeek[]}>}) {
+function Contributions({Chart}: {Chart: React.FunctionComponent<{weeks: ContributionWeek[], year: number}>}) {
     let placeholderContributions: any[] = [];
     const [contributions, setContributions] = useState<any>([]);
     
@@ -10,7 +10,7 @@ function Contributions({Chart}: {Chart: React.FunctionComponent<{weeks: Contribu
     useEffect(() => {
         [2021, 2022, 2023, 2024].forEach(year => {
             getContributionsByYear(
-                "token  REPLACE WITH TOKEN FROM Z-SCRATCHPAD.TXT in the root project folder",
+                "to----ken  REPLACE WITH TO----KEN FROM Z-SCRATCHPAD.TXT in the root project folder",
                 "andrei-g-git",
                 year
             )
@@ -23,6 +23,7 @@ function Contributions({Chart}: {Chart: React.FunctionComponent<{weeks: Contribu
         })
 
         setContributions(placeholderContributions)
+
     },
         []
     )
@@ -33,10 +34,19 @@ function Contributions({Chart}: {Chart: React.FunctionComponent<{weeks: Contribu
                 contributions.map((contrib: any) => {
                         //console.log("yearly:   ", contrib)
                         const abc = 123;
-                        return <Chart weeks={contrib.weeks}/>
+                        console.log("YEAR FROM CONTRIBUTIONS FUNC:   ", contrib.months[0].year)
+                        const def = 456;
+                        return <Chart 
+                            weeks={contrib.weeks}
+                            year={contrib.months[0].year}
+                        />
                     }
                 )
 
+            }
+
+            {
+                test(contributions)
             }
         </div>        
     )
