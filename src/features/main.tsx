@@ -10,7 +10,7 @@ import BigButton from "@/components/buttons/big-button";
 import SkillGroup from "@/components/fancy/skill-group";
 import skills from "../../src/assets/text/skills.json"
 import projects from "../../src/assets/text/projects.json"
-
+import { MainBg } from "@/features/main-bg";
 import { pickReactIcon } from "@/ts/factories";
 import { Projects } from "./projects";
 import { Contributions } from "./contributions";
@@ -21,79 +21,96 @@ import { Contributions } from "./contributions";
 
 //this is gearing up to become a god component...
 function Main(props: any) {
-    
     return (
-        <div className="container-fluid">
-            <Landing />
+        /* <div className="main-container"> */
 
-            <div className="row d-flex" style={{padding: "0 10%"}}>
-                <div className="col-5 sticky-top vh-100"> {/* apparently the sticky ends when you pass the first other element in the block, not when you pass the sticky element's content */}
-                    <SideContent>
-                        <SideContent.Description>
-                            <Headline />
-                        </SideContent.Description>
-                        <SideContent.Navigation>
-                        <div>
-                            <p>Home</p>
-                            <p>About </p>
-                            <p>Experience</p>
-                            <p>Skills</p>
+           
+
+            /* <div className="position-absolute"> */
+                <div className="container-fluid">
+
+                    <Landing />
+
+                    <div className="row d-flex" style={{padding: "0 10%"}}>
+                        <div className="col-5 sticky-top vh-100"> {/* apparently the sticky ends when you pass the first other element in the block, not when you pass the sticky element's content */}
+                            <SideContent>
+                                <SideContent.Description>
+                                    <Headline />
+                                </SideContent.Description>
+                                <SideContent.Navigation>
+                                <div>
+                                    <p>Home</p>
+                                    <p>About </p>
+                                    <p>Experience</p>
+                                    <p>Skills</p>
+
+                                </div>
+                                </SideContent.Navigation>
+                            </SideContent>
+
+                        </div> 
+
+                        <div className="container col-7 px-5" style={{border: "2px solid red", height: "4900px"}}>
+                            <div className="position-relative">
+                                <div className="bg-for-about-and-exp"></div>
+
+                                <div className="position-absolute">
+                                    <ExtraAbout />
+
+                                    <ExperienceSection experience={experience}
+                                        Job={JobExperience}
+                                        Skill={SkillTag}
+                                    >
+                                        <BigButton text="View Resume"
+                                            link="https://www.wikipedia.org"
+                                        />
+                                    </ExperienceSection>                                      
+                                </div>
+                              
+                            </div>
+
+
+
+                            <br/>
+                            <br/>
+
+                            <SkillGroup type="hard"
+                                skills={skills.filter(skill => skill.hardSkill == true)}
+                            />
+                            <br/>
+                            <br/>
+                            <SkillGroup type="soft"
+                                skills={skills.filter(skill => skill.hardSkill == false)}
+                            />
+                        
+
+                            <br />
+                            <br />
+
+                            <div>
+                                projects
+                            </div>
+
+                            <br />
+                            <br />
+
+                            <Projects projects={projects.filter(project => project.colab == false)}/>
+
+                            <br />
+                            <br />
+                            <Projects projects={projects.filter(project => project.colab == true)}/>
+                            <br />
+                            <br />    
+                            <Contributions Chart={YearlyContribution}/>
 
                         </div>
-                        </SideContent.Navigation>
-                    </SideContent>
-
-                </div> 
-
-                <div className="container col-7 px-5" style={{border: "2px solid red", height: "4900px"}}>
-                    <ExtraAbout />
-                    <ExperienceSection experience={experience}
-                        Job={JobExperience}
-                        Skill={SkillTag}
-                    >
-                        <BigButton text="View Resume"
-                            link="https://www.wikipedia.org"
-                        />
-                    </ExperienceSection>
-
-
-                    <br/>
-                    <br/>
-
-                    <SkillGroup type="hard"
-                        skills={skills.filter(skill => skill.hardSkill == true)}
-                    />
-                    <br/>
-                    <br/>
-                    <SkillGroup type="soft"
-                        skills={skills.filter(skill => skill.hardSkill == false)}
-                    />
-                
-
-                    <br />
-                    <br />
-
-                    <div>
-                        projects
                     </div>
 
-                    <br />
-                    <br />
-
-                    <Projects projects={projects.filter(project => project.colab == false)}/>
-
-                    <br />
-                    <br />
-                    <Projects projects={projects.filter(project => project.colab == true)}/>
-                    <br />
-                    <br />    
-                    <Contributions Chart={YearlyContribution}/>
 
                 </div>
-            </div>
 
-
-        </div>
+           /*  </div> */
+        /* </div> */
     )
 }
 

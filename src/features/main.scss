@@ -1,11 +1,24 @@
-.side-pane{
-    position: sticky;
-    
-    top: 0;
-    bottom: 0;
-    left: 0;
-
+.main-container{
+    //position: relative;
 }
+
+
+.bg-for-about-and-exp{
+    width: 3840px;
+    height: 50vh;
+    position:absolute;
+    transform: scale(3);
+    background: linear-gradient(#3B3259 35vh, #A3D5B4);
+}
+
+// .side-pane{
+//     position: sticky;
+    
+//     top: 0;
+//     bottom: 0;
+//     left: 0;
+
+// }
 
 // i {
 //     font-size: 50px;
