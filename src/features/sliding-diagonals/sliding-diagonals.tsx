@@ -6,7 +6,15 @@ function SlidingDiagonals(props: any) {
 
     return (
         <div className="slidding-diagonals-container">
+            {
+                [1, 2, 3, 4].map(number => 
+                    <div className="slidding-diagonal" 
+                        id={`slidding-diagonal-${number}`}
+                    >
 
+                    </div>
+                )
+            }
         </div>
     )
 }

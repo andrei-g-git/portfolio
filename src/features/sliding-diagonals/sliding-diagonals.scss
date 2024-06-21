@@ -1,8 +1,104 @@
+@mixin slide($id, $duration, $delay, $background-color, $opacity, $offset-y){
+    #{$id}{
+        position: relative;
+        width: 85vw;
+        height: 100%;
+        background-color: $background-color;
+        opacity: $opacity;
+
+        animation: back-and-forth $duration ease-in-out infinite alternate;  
+        animation-delay: $delay;   
+        
+        left: 0;
+        top: $offset-y;
+        
+        &::before{
+            content: "";
+            position: absolute;
+            left: 0;
+            //top: $offset-y;
+            width: 50vw;
+            height: 100%;
+            margin-left: -50vw;
+            background-color: $background-color;     
+            opacity: $opacity;                   
+        }
+
+        &::after{
+            content: "";
+            position: absolute;
+            left: 85vw;
+            //top: $offset-y;
+            width: 0;
+            height: 0;
+            border-top: 80vh solid $background-color;
+            border-right: 100vw solid transparent;    
+
+            opacity: $opacity;
+            
+            //animation: back-and-forth-triangle 3s ease-in-out infinite alternate;
+        }        
+    }
+}
+
+
 .slidding-diagonals-container{
     width: 100vw;
-    height: 30vh;
-    //transform: scale-x(5);
-    //margin: 0 -150%;
+    height: 80vh;
     background-color: #A3D5B4;
-    //z-index: 999;
+
+    overflow-x: hidden;
+
+    @include slide(
+        "#slidding-diagonal-1",
+        3s,
+        0,
+        #746D92,
+        1s,
+        0
+    );
+
+    @include slide(
+        "#slidding-diagonal-2",
+        4s,
+        1s,
+        #49CC75,
+        0.7,
+        -100%
+    )
+
+    // #slidding-diagonal-1{
+    //     position: relative;
+    //     width: 85vw;
+    //     height: 100%;
+    //     background-color: #746D92;
+
+    //     animation: back-and-forth 3s ease-in-out infinite alternate;
+
+    //     &::before{
+    //         content: "";
+    //         position: absolute;
+    //         left: 0;
+    //         width: 50vw;
+    //         height: 100%;
+    //         margin-left: -50vw;
+    //         background-color: #746D92;
+
+    //     }
+
+    //     &::after{
+    //         content: "";
+    //         position: absolute;
+    //         left: 85vw;
+    //         width: 0;
+    //         height: 0;
+    //         border-top: 80vh solid #746D92;
+    //         border-right: 100vw solid transparent;    
+    //     }
+    // }
+}
+
+@keyframes back-and-forth{
+    from{transform: translateX(-120%);}
+    to{transform: translateX(-10%);}
 }

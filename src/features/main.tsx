@@ -38,8 +38,8 @@ function Main(props: any) {
         <div className="position-relative">
                 <div className="postion-absolute">
                     <div className="position-relative">
-                        <div className="bg-info position-absolute" style={{width: "100vw", height: "9999px"}}></div>
-                        <div className="position-absolute" style={{padding: "20%", border: "solid 5px black", position: "absolute", top: slidingDiagonalsPositionY}}>
+                        <div className="main-dark-blue-bg position-absolute" style={{width: "100vw", height: "9999px"}}></div>
+                        <div className="position-absolute" style={{top: slidingDiagonalsPositionY}}>
                             <SlidingDiagonals />
                         </div>
                     </div>
