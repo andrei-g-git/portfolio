@@ -11,6 +11,26 @@
     background: linear-gradient(#3B3259 35vh, #A3D5B4);
 }
 
+.main-bg-basics{
+    width: 3840px;
+    height: 50vh;
+    margin: 0 -100%;
+}
+
+.blue-to-teal-gradient{
+    background: linear-gradient(#3B3259 35vh, #A3D5B4);
+}
+
+.dark-to-light-blue-gradient{
+    background: linear-gradient(#3B3259 35vh, #4e4763);
+}
+
+.main-dark-blue-bg{
+    background-color: #746D92;  
+    
+    overflow-x: clip;
+}
+
 // .side-pane{
 //     position: sticky;
     
