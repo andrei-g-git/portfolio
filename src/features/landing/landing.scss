@@ -10,6 +10,46 @@
         height: 100%;
 
         border: dotted red 3px;
+
+        .test-container{
+            border-bottom: solid 5px black;
+            display: flex;
+            justify-content: space-around;
+            align-items:end;
+            height: 256px;
+
+            .test-char{
+                width: 64px;
+                height: 128px;
+                background-color: red;
+/*                 position: absolute;
+                bottom: 0; */
+            }
+
+            .test-react{
+                width: 64px;
+                height: 128px;
+                background-color: lightblue;
+/*                 position: absolute;
+                bottom: 0; */
+            }
+
+            .test-nodejs{
+                width: 64px;
+                height: 128px;
+                background-color: green;
+/*                 position: absolute;
+                bottom: 0; */
+            }
+
+            .test-mysql{
+                width: 64px;
+                height: 128px;
+                background-color: orange;
+/*                 position: absolute;
+                bottom: 0; */
+            }
+        }
     }    
 }
 
