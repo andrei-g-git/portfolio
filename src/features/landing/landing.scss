@@ -24,7 +24,15 @@
                 background-color: red;
 /*                 position: absolute;
                 bottom: 0; */
+                // .test-move-animation{
+                //      animation: test-walk 3s ease-in-out;
+                // }
+               
             }
+
+            .test-move-animation{
+                animation: test-walk 3s ease-in-out;
+            }            
 
             .test-react{
                 width: 64px;
@@ -50,6 +58,12 @@
                 bottom: 0; */
             }
         }
-    }    
+    }   
 }
+
+@keyframes test-walk {
+    0% {left: 0;}
+}
+
+
 
